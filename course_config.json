@@ -21,9 +21,9 @@
   },
   "github": {
     "org": "ECON4002-2026-S1",
-    "repoPattern": "hw{week}-{team}",
+    "repoPattern": "{week}-{team}",
     "worksheetFiles": ["ANSWERS.md"],
-    "totalWeeks": 5
+    "totalWeeks": 8
   },
   "courseSchedule": {
     "semesterDates": {
@@ -90,7 +90,7 @@
         "weight": 2.5,
         "dueDate": "2026-03-16T23:59:00+08:00",
         "weekNumber": 3,
-        "description": "Weekly homework submitted via GitHub. See your hw01 repository.",
+        "description": "Submitted via GitHub. Open your hw01-{username} repository in the Worksheets tab and complete ANSWERS.md.",
         "reminderDays": [7, 3, 1]
       },
       {
@@ -100,8 +100,7 @@
         "weight": 15,
         "dueDate": "2026-03-25T23:59:00+08:00",
         "weekNumber": 4,
-        "description": "Written assignment submitted as PDF via LMS. Mathematical and economic analysis covering Weeks 1–4.",
-        "submissionUrl": "https://lms.uwa.edu.au",
+        "description": "Submitted via GitHub. Open your assign01-{username} repository in the Worksheets tab. Mathematical and economic analysis covering Weeks 1–4.",
         "reminderDays": [14, 7, 3, 1]
       },
       {
@@ -111,7 +110,7 @@
         "weight": 2.5,
         "dueDate": "2026-04-13T23:59:00+08:00",
         "weekNumber": 7,
-        "description": "Weekly homework submitted via GitHub. See your hw02 repository.",
+        "description": "Submitted via GitHub. Open your hw02-{username} repository in the Worksheets tab.",
         "reminderDays": [7, 3, 1]
       },
       {
@@ -121,7 +120,7 @@
         "weight": 2.5,
         "dueDate": "2026-04-27T23:59:00+08:00",
         "weekNumber": 9,
-        "description": "Weekly homework submitted via GitHub. See your hw03 repository.",
+        "description": "Submitted via GitHub. Open your hw03-{username} repository in the Worksheets tab.",
         "reminderDays": [7, 3, 1]
       },
       {
@@ -131,8 +130,7 @@
         "weight": 20,
         "dueDate": "2026-05-06T23:59:00+08:00",
         "weekNumber": 10,
-        "description": "Written assignment submitted as PDF via LMS. Consumer and producer theory with R analysis.",
-        "submissionUrl": "https://lms.uwa.edu.au",
+        "description": "Submitted via GitHub. Open your assign02-{username} repository in the Worksheets tab. Consumer and producer theory with R analysis.",
         "reminderDays": [14, 7, 3, 1]
       },
       {
@@ -142,7 +140,7 @@
         "weight": 2.5,
         "dueDate": "2026-05-13T23:59:00+08:00",
         "weekNumber": 11,
-        "description": "Weekly homework submitted via GitHub. See your hw04 repository.",
+        "description": "Submitted via GitHub. Open your hw04-{username} repository in the Worksheets tab.",
         "reminderDays": [7, 3, 1]
       },
       {
@@ -152,8 +150,7 @@
         "weight": 20,
         "dueDate": "2026-05-20T23:59:00+08:00",
         "weekNumber": 12,
-        "description": "Written assignment submitted as PDF via LMS. Market equilibrium, trade policy, welfare economics.",
-        "submissionUrl": "https://lms.uwa.edu.au",
+        "description": "Submitted via GitHub. Open your assign03-{username} repository in the Worksheets tab. Market equilibrium, trade policy, and welfare economics.",
         "reminderDays": [14, 7, 3, 1]
       },
       {
@@ -163,7 +160,7 @@
         "weight": 0,
         "dueDate": "2026-05-27T23:59:00+08:00",
         "weekNumber": 13,
-        "description": "Non-graded practice set for the final test. Submitted via GitHub. See your hw05 repository.",
+        "description": "Ungraded. Submitted via GitHub. Open your final-practice-{username} repository in the Worksheets tab. Covers all topics from the semester.",
         "reminderDays": [7, 3, 1]
       },
       {
@@ -173,7 +170,7 @@
         "weight": 10,
         "dueDate": "2026-05-22T17:00:00+08:00",
         "weekNumber": 12,
-        "description": "Continuous assessment based on attendance and weekly homework completion.",
+        "description": "Continuous assessment based on attendance and completion of homework assignments.",
         "reminderDays": []
       },
       {
@@ -183,12 +180,12 @@
         "weight": 35,
         "dueDate": "2026-06-13T23:59:00+08:00",
         "weekNumber": 16,
-        "description": "Not centrally scheduled. Arranged by instructor. Exact date TBA (30 May – 13 June).",
+        "description": "Not centrally scheduled — arranged by instructor. Exact date TBA (30 May – 13 June).",
         "reminderDays": [21, 14, 7, 3, 1]
       }
     ]
   },
-  "outlineContent": "COVER:\nECON4002: Core Concepts in Agricultural and Applied Economics\nUniversity of Western Australia\nSemester 1, 2026\nInstructor: Atakelty Hailu\n\nDESCRIPTION:\nA rigorous introduction to the economic concepts and quantitative methods used in agricultural and resource economics. Topics include supply and demand analysis, optimization, consumer and producer theory, market equilibrium, welfare economics, trade policy, and decision under uncertainty. R is used throughout for analysis and visualization.\n\nCONTACTS:\nInstructor: Atakelty Hailu\nEmail: atakelty.hailu@uwa.edu.au\nOffice: Social Sciences Building 380\nOffice Hours: Wednesdays 2–4pm or by appointment\n\nTOPICS:\nWeek 1: Foundations — Economics & R Setup\nWeek 2: Mathematical Methods I — Linear Algebra\nWeek 3: Mathematical Methods II — Calculus & Functions\nWeek 4: Optimization — Unconstrained and Constrained\nWeek 5: Consumer Theory I — Utility & Marshallian Demand\nWeek 6: Consumer Theory II — Duality & Welfare\nWeek 7: Producer Theory I — Technology & Costs\nWeek 8: Producer Theory II — Profit Maximization & Industry\nWeek 9: Market Equilibrium Analysis\nWeek 10: International Trade and Policy\nWeek 11: Welfare Economics — Measuring Economic Well-Being\nWeek 12: Decision Under Uncertainty\n\nASSESSMENTS:\nHomework 1: 2.5% — due Mon 16 March (via GitHub)\nAssignment 1: 15% — due Wed 25 March (PDF via LMS)\nHomework 2: 2.5% — due Mon 13 April (via GitHub)\nHomework 3: 2.5% — due Mon 27 April (via GitHub)\nAssignment 2: 20% — due Wed 6 May (PDF via LMS)\nHomework 4: 2.5% — due Wed 13 May (via GitHub)\nAssignment 3: 20% — due Wed 20 May (PDF via LMS)\nClass Participation: 10% — continuous (attendance + homework)\nFinal Test Practice: ungraded — due Wed 27 May (via GitHub)\nFinal Test: 35% — exam period 30 May – 13 June (exact date TBA)\n\nRESPONSIBILITIES:\nStudents are expected to attend all classes, complete readings before class, submit homeworks via GitHub on time, and submit written assignments as PDF via LMS. Late submissions incur a 5% per day penalty. AI tools may be used as study aids but not to complete assessments.",
+  "outlineContent": "COVER:\nECON4002: Core Concepts in Agricultural and Applied Economics\nUniversity of Western Australia\nSemester 1, 2026\nInstructor: Atakelty Hailu\n\nDESCRIPTION:\nA rigorous introduction to the economic concepts and quantitative methods used in agricultural and resource economics. Topics include supply and demand analysis, optimization, consumer and producer theory, market equilibrium, welfare economics, trade policy, and decision under uncertainty. R is used throughout for analysis and visualization.\n\nCONTACTS:\nInstructor: Atakelty Hailu\nEmail: atakelty.hailu@uwa.edu.au\nOffice: Social Sciences Building 380\nOffice Hours: Wednesdays 2–4pm or by appointment\n\nTOPICS:\nWeek 1: Foundations — Economics & R Setup\nWeek 2: Mathematical Methods I — Linear Algebra\nWeek 3: Mathematical Methods II — Calculus & Functions\nWeek 4: Optimization — Unconstrained and Constrained\nWeek 5: Consumer Theory I — Utility & Marshallian Demand\nWeek 6: Consumer Theory II — Duality & Welfare\nWeek 7: Producer Theory I — Technology & Costs\nWeek 8: Producer Theory II — Profit Maximization & Industry\nWeek 9: Market Equilibrium Analysis\nWeek 10: International Trade and Policy\nWeek 11: Welfare Economics — Measuring Economic Well-Being\nWeek 12: Decision Under Uncertainty\n\nASSESSMENTS:\nHomework 1: 2.5% — due Mon 16 March (GitHub: hw01-{username})\nAssignment 1: 15% — due Wed 25 March (GitHub: assign01-{username})\nHomework 2: 2.5% — due Mon 13 April (GitHub: hw02-{username})\nHomework 3: 2.5% — due Mon 27 April (GitHub: hw03-{username})\nAssignment 2: 20% — due Wed 6 May (GitHub: assign02-{username})\nHomework 4: 2.5% — due Wed 13 May (GitHub: hw04-{username})\nAssignment 3: 20% — due Wed 20 May (GitHub: assign03-{username})\nClass Participation: 10% — continuous (attendance + homework)\nFinal Test Practice: ungraded — due Wed 27 May (GitHub: final-practice-{username})\nFinal Test: 35% — exam period 30 May – 13 June (exact date TBA)\n\nAll assignments are submitted individually via GitHub. Open the Worksheets tab in Nomad or visit github.com/ECON4002-2026-S1 to find your personal repository for each assessment. Late submissions incur a 5% per day penalty for the first 7 days, after which the assignment is not accepted.",
   "weeklyResources": {
     "1": {
       "week": 1,
