@@ -1,0 +1,416 @@
+{
+  "week": 1,
+  "title": "Foundations: Economics & R Setup",
+  "learning_objectives": [
+    "Explain the purpose and structure of formal economic analysis",
+    "Set up R and RStudio",
+    "Execute basic R commands",
+    "Create simple economic models in R",
+    "Build and visualize supply-demand models"
+  ],
+  "problems": [
+    {
+      "id": "W1-P1",
+      "type": "conceptual",
+      "topic": "Economic Modeling",
+      "difficulty": "basic",
+      "question": "Explain why economists use mathematical models rather than purely verbal analysis. Give two specific advantages.",
+      "hints": [
+        "Think about what mathematics provides that words cannot",
+        "Consider: precision, assumptions, consistency, generalization",
+        "How does math help us quantify effects?"
+      ],
+      "solution": {
+        "key_points": [
+          "Precision: Mathematical statements are unambiguous, unlike verbal descriptions",
+          "Explicit assumptions: All assumptions must be stated formally",
+          "Logical consistency: Mathematics prevents internal contradictions",
+          "Generalization: Mathematical results extend beyond specific examples",
+          "Quantification: We can measure effects numerically"
+        ],
+        "example_answer": "Economists use mathematical models because they provide precision (mathematical statements have exact meanings) and enable quantification (we can calculate specific magnitudes of effects, such as 'a $1 tax increases price by $0.60')."
+      },
+      "rubric": {
+        "full_credit": "Two valid advantages with clear explanations",
+        "partial_credit": "One advantage explained well, or two mentioned without explanation",
+        "no_credit": "No valid advantages identified"
+      }
+    },
+    {
+      "id": "W1-P2",
+      "type": "conceptual",
+      "topic": "Variables in Economic Models",
+      "difficulty": "basic",
+      "question": "What is the difference between an exogenous variable and an endogenous variable? Provide an example of each in a supply-demand model.",
+      "hints": [
+        "Exogenous means 'determined outside' the model",
+        "Endogenous means 'determined within' the model",
+        "Which variables do we solve for? Which are given?"
+      ],
+      "solution": {
+        "definition": {
+          "exogenous": "Variables determined outside the model; taken as given inputs",
+          "endogenous": "Variables determined within the model; solved for as outputs"
+        },
+        "examples": {
+          "exogenous_in_supply_demand": ["Input prices (wages, fertilizer costs)", "Government taxes/subsidies", "Consumer income", "Weather conditions"],
+          "endogenous_in_supply_demand": ["Equilibrium price P*", "Equilibrium quantity Q*", "Consumer surplus", "Producer surplus"]
+        }
+      },
+      "rubric": {
+        "full_credit": "Correct definitions with valid examples for both",
+        "partial_credit": "Correct definitions but weak examples, or correct examples but unclear definitions",
+        "no_credit": "Confusion between exogenous and endogenous"
+      }
+    },
+    {
+      "id": "W1-P3a",
+      "type": "computational",
+      "topic": "R Basics - Arithmetic",
+      "difficulty": "basic",
+      "question": "Predict the output, then verify in R: 3 + 5 * 2",
+      "hints": [
+        "Remember order of operations (PEMDAS/BODMAS)",
+        "Multiplication before addition"
+      ],
+      "solution": {
+        "predicted": 13,
+        "explanation": "5 * 2 = 10 is computed first, then 3 + 10 = 13",
+        "r_code": "3 + 5 * 2  # Returns 13"
+      }
+    },
+    {
+      "id": "W1-P3b",
+      "type": "computational",
+      "topic": "R Basics - Arithmetic",
+      "difficulty": "basic",
+      "question": "Predict the output, then verify in R: (3 + 5) * 2",
+      "solution": {
+        "predicted": 16,
+        "explanation": "Parentheses first: 3 + 5 = 8, then 8 * 2 = 16",
+        "r_code": "(3 + 5) * 2  # Returns 16"
+      }
+    },
+    {
+      "id": "W1-P3c",
+      "type": "computational",
+      "topic": "R Basics - Modulo",
+      "difficulty": "basic",
+      "question": "Predict the output, then verify in R: 17 %% 5",
+      "hints": [
+        "%% is the modulo operator (remainder after division)"
+      ],
+      "solution": {
+        "predicted": 2,
+        "explanation": "17 ÷ 5 = 3 remainder 2, so 17 %% 5 = 2",
+        "r_code": "17 %% 5  # Returns 2"
+      }
+    },
+    {
+      "id": "W1-P3d",
+      "type": "computational",
+      "topic": "R Basics - Logarithms",
+      "difficulty": "basic",
+      "question": "Predict the output, then verify in R: log(exp(3))",
+      "hints": [
+        "log() is natural logarithm (base e)",
+        "exp() is exponential function",
+        "These are inverse functions"
+      ],
+      "solution": {
+        "predicted": 3,
+        "explanation": "exp(3) = e³, and log(e³) = 3. Natural log and exp are inverse functions.",
+        "r_code": "log(exp(3))  # Returns 3"
+      }
+    },
+    {
+      "id": "W1-P4",
+      "type": "computational",
+      "topic": "Vectors",
+      "difficulty": "intermediate",
+      "question": "Create a vector called 'yields' containing wheat yields: 45, 52, 48, 55, 50, 47, 53. Calculate mean, sd, min, max. Count how many are above the mean.",
+      "hints": [
+        "Use c() to create vectors",
+        "Use mean(), sd(), min(), max() for statistics",
+        "Use sum() with logical condition to count"
+      ],
+      "solution": {
+        "r_code": [
+          "# Part a: Create vector",
+          "yields <- c(45, 52, 48, 55, 50, 47, 53)",
+          "",
+          "# Part b: Calculate statistics",
+          "mean(yields)   # 50",
+          "sd(yields)     # 3.416",
+          "min(yields)    # 45",
+          "max(yields)    # 55",
+          "",
+          "# Part c: Count above mean",
+          "sum(yields > mean(yields))  # 3",
+          "",
+          "# Part d: Extract high yields",
+          "high_yields <- yields[yields > 50]",
+          "high_yields    # 52, 55, 53",
+          "",
+          "# Part e: Calculate revenues at $6.50/bushel",
+          "price <- 6.50",
+          "revenues <- yields * price",
+          "revenues  # 292.5, 338.0, 312.0, 357.5, 325.0, 305.5, 344.5"
+        ],
+        "answers": {
+          "mean": 50,
+          "sd": 3.416,
+          "min": 45,
+          "max": 55,
+          "above_mean_count": 3,
+          "high_yields": [52, 55, 53]
+        }
+      }
+    },
+    {
+      "id": "W1-P5",
+      "type": "computational",
+      "topic": "Functions",
+      "difficulty": "intermediate",
+      "question": "Write a function fahrenheit_to_celsius that converts F to C using C = (5/9)(F-32). Write a profit function with default tax_rate = 0.25.",
+      "hints": [
+        "Use function(arg1, arg2) { ... }",
+        "Default arguments: function(x, y = 10)",
+        "Return values with return() or just put value at end"
+      ],
+      "solution": {
+        "r_code": [
+          "# Part a: Temperature conversion",
+          "fahrenheit_to_celsius <- function(F) {",
+          "  C <- (5/9) * (F - 32)",
+          "  return(C)",
+          "}",
+          "",
+          "# Part b: Test",
+          "fahrenheit_to_celsius(32)   # 0",
+          "fahrenheit_to_celsius(68)   # 20",
+          "fahrenheit_to_celsius(100)  # 37.78",
+          "",
+          "# Part c: Profit function",
+          "profit <- function(revenue, cost, tax_rate = 0.25) {",
+          "  gross_profit <- revenue - cost",
+          "  after_tax <- gross_profit * (1 - tax_rate)",
+          "  return(after_tax)",
+          "}",
+          "",
+          "# Part d: Calculate profit",
+          "profit(50000, 30000, tax_rate = 0.20)  # 16000"
+        ],
+        "answers": {
+          "f32": 0,
+          "f68": 20,
+          "f100": 37.78,
+          "profit_result": 16000
+        }
+      }
+    },
+    {
+      "id": "W1-P6",
+      "type": "application",
+      "topic": "Supply and Demand",
+      "difficulty": "intermediate",
+      "question": "Soybean market: Qd = 500 - 10P, Qs = -100 + 20P. Find equilibrium analytically and in R. Calculate price elasticity of demand at equilibrium.",
+      "hints": [
+        "Equilibrium: Qd = Qs, solve for P",
+        "Elasticity formula: ε = (dQ/dP) × (P/Q)",
+        "For linear demand dQ/dP is the coefficient on P"
+      ],
+      "solution": {
+        "analytical": {
+          "equilibrium_derivation": [
+            "Set Qd = Qs:",
+            "500 - 10P = -100 + 20P",
+            "500 + 100 = 20P + 10P",
+            "600 = 30P",
+            "P* = 20"
+          ],
+          "equilibrium_quantity": "Q* = 500 - 10(20) = 300",
+          "P_star": 20,
+          "Q_star": 300
+        },
+        "elasticity": {
+          "derivation": [
+            "ε_d = (dQd/dP) × (P/Qd)",
+            "dQd/dP = -10 (coefficient on P in demand)",
+            "At equilibrium: P* = 20, Q* = 300",
+            "ε_d = -10 × (20/300) = -10 × 0.0667 = -0.667"
+          ],
+          "value": -0.667,
+          "interpretation": "Demand is inelastic (|ε| < 1). A 1% price increase leads to only 0.67% decrease in quantity demanded. Producers could increase revenue by raising prices."
+        },
+        "r_code": [
+          "# Define functions",
+          "demand <- function(P) { 500 - 10 * P }",
+          "supply <- function(P) { -100 + 20 * P }",
+          "",
+          "# Find equilibrium",
+          "excess_demand <- function(P) { demand(P) - supply(P) }",
+          "P_star <- uniroot(excess_demand, c(0, 100))$root",
+          "Q_star <- demand(P_star)",
+          "",
+          "cat('P* =', P_star, ', Q* =', Q_star)",
+          "",
+          "# Calculate elasticity",
+          "dQd_dP <- -10",
+          "elasticity <- dQd_dP * (P_star / Q_star)",
+          "cat('Elasticity =', round(elasticity, 3))"
+        ]
+      },
+      "rubric": {
+        "full_credit": "Correct equilibrium (P=20, Q=300), correct elasticity (-0.667), correct interpretation",
+        "partial_credit": "Equilibrium correct but elasticity error, or calculation correct but interpretation wrong",
+        "no_credit": "Fundamental errors in setting up equilibrium condition"
+      }
+    },
+    {
+      "id": "W1-P7",
+      "type": "application",
+      "topic": "Policy Analysis",
+      "difficulty": "advanced",
+      "question": "With soybean market from P6: (a) Analyze a $25 price floor. (b) Analyze a $3 tax on producers - find new equilibrium, tax burden sharing, and deadweight loss.",
+      "hints": [
+        "Price floor: If P_floor > P*, there's surplus",
+        "Tax shifts supply: new supply is Qs = -100 + 20(P - 3)",
+        "Tax burden: compare price changes for consumers and producers",
+        "DWL = 0.5 × tax × change in quantity"
+      ],
+      "solution": {
+        "price_floor": {
+          "analysis": [
+            "At P = 25:",
+            "Qd = 500 - 10(25) = 250",
+            "Qs = -100 + 20(25) = 400",
+            "Surplus = 400 - 250 = 150 million bushels"
+          ],
+          "Qd_at_floor": 250,
+          "Qs_at_floor": 400,
+          "surplus": 150
+        },
+        "tax_analysis": {
+          "new_supply": "Qs_tax = -100 + 20(P - 3) = -160 + 20P",
+          "new_equilibrium": {
+            "derivation": [
+              "500 - 10P = -160 + 20P",
+              "660 = 30P",
+              "P_consumer = 22"
+            ],
+            "P_consumer": 22,
+            "P_producer": 19,
+            "Q_new": 280
+          },
+          "burden_sharing": {
+            "consumer_bears": "$2 (price rises from 20 to 22)",
+            "producer_bears": "$1 (net price falls from 20 to 19)",
+            "consumer_share": "67%",
+            "producer_share": "33%"
+          },
+          "deadweight_loss": {
+            "formula": "DWL = 0.5 × tax × ΔQ",
+            "calculation": "DWL = 0.5 × 3 × (300 - 280) = 0.5 × 3 × 20 = 30",
+            "value": 30
+          }
+        },
+        "r_code": [
+          "# Price floor analysis",
+          "P_floor <- 25",
+          "Qd_floor <- demand(P_floor)",
+          "Qs_floor <- supply(P_floor)",
+          "surplus <- Qs_floor - Qd_floor",
+          "",
+          "cat('At P =', P_floor, ': Qd =', Qd_floor, ', Qs =', Qs_floor)",
+          "cat('Surplus =', surplus)",
+          "",
+          "# Tax analysis",
+          "supply_tax <- function(P) { -100 + 20 * (P - 3) }",
+          "",
+          "excess_tax <- function(P) { demand(P) - supply_tax(P) }",
+          "P_new <- uniroot(excess_tax, c(0, 100))$root",
+          "Q_new <- demand(P_new)",
+          "",
+          "P_producer <- P_new - 3",
+          "consumer_burden <- P_new - P_star",
+          "producer_burden <- P_star - P_producer",
+          "",
+          "DWL <- 0.5 * 3 * (Q_star - Q_new)",
+          "",
+          "cat('New P_consumer =', P_new)",
+          "cat('P_producer =', P_producer)",
+          "cat('New Q =', Q_new)",
+          "cat('DWL =', DWL)"
+        ]
+      }
+    },
+    {
+      "id": "W1-P10",
+      "type": "application",
+      "topic": "Simulation",
+      "difficulty": "advanced",
+      "question": "Crop yield model: Y = 30 + 0.5R - 0.002R². Find optimal rainfall analytically. Simulate 50 random rainfall values from U(50,150) and calculate average yield.",
+      "hints": [
+        "To maximize: dY/dR = 0",
+        "Use runif(n, min, max) for uniform random numbers",
+        "Apply the yield function to each rainfall value"
+      ],
+      "solution": {
+        "analytical": {
+          "derivative": "dY/dR = 0.5 - 0.004R",
+          "optimal_condition": "0.5 - 0.004R = 0",
+          "optimal_R": 125,
+          "max_yield": "Y(125) = 30 + 0.5(125) - 0.002(125)² = 30 + 62.5 - 31.25 = 61.25"
+        },
+        "r_code": [
+          "# Define yield function",
+          "yield_fn <- function(R) {",
+          "  Y <- 30 + 0.5 * R - 0.002 * R^2",
+          "  return(Y)",
+          "}",
+          "",
+          "# Verify maximum",
+          "optimal_R <- 0.5 / 0.004",
+          "max_yield <- yield_fn(optimal_R)",
+          "cat('Optimal R =', optimal_R, 'mm')",
+          "cat('Max yield =', max_yield, 'bu/acre')",
+          "",
+          "# Plot",
+          "R_range <- 0:200",
+          "plot(R_range, yield_fn(R_range), type = 'l',",
+          "     xlab = 'Rainfall (mm)', ylab = 'Yield (bu/acre)',",
+          "     main = 'Yield-Rainfall Response')",
+          "abline(v = optimal_R, lty = 2, col = 'red')",
+          "",
+          "# Simulation",
+          "set.seed(42)  # For reproducibility",
+          "rainfall_sim <- runif(50, 50, 150)",
+          "yields_sim <- yield_fn(rainfall_sim)",
+          "mean_yield <- mean(yields_sim)",
+          "cat('Average yield from simulation:', round(mean_yield, 2))"
+        ]
+      }
+    }
+  ],
+  "ai_tutor_guidance": {
+    "common_errors": [
+      "Forgetting parentheses in function calls: mean yields instead of mean(yields)",
+      "Confusing <- (assignment) with = (also assignment, but <- preferred)",
+      "Using 1-indexed vs 0-indexed (R uses 1-indexed)",
+      "Order of operations errors in calculations",
+      "Not using pmax/pmin for ensuring non-negative values"
+    ],
+    "socratic_prompts": [
+      "What condition must hold at market equilibrium?",
+      "What does the coefficient on P tell you about the demand curve?",
+      "How do you interpret an elasticity value between 0 and -1?",
+      "Who bears more of the tax burden and why?"
+    ],
+    "extension_questions": [
+      "How would the elasticity change at different points along the demand curve?",
+      "What happens to tax burden sharing if demand becomes more elastic?",
+      "How would you modify the model to include multiple goods?"
+    ]
+  }
+}

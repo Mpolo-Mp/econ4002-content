@@ -1,0 +1,661 @@
+{
+  "courseId": "econ4002_2026_sem1",
+  "courseName": "Core Concepts in Agricultural and Applied Economics",
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-06",
+  "institution": {
+    "id": "uwa",
+    "name": "University of Western Australia",
+    "contentRepoUrl": "https://github.com/ECON4002-2026-S1/econ4002-content",
+    "trackResourceAccess": false
+  },
+  "courseInfo": {
+    "code": "ECON4002",
+    "university": "University of Western Australia",
+    "semester": "S1 2026",
+    "instructor": "Atakelty Hailu",
+    "email": "atakelty.hailu@uwa.edu.au",
+    "office": "Social Sciences Building 380",
+    "officeHours": "Wednesdays 2–4pm or by appointment",
+    "description": "A rigorous introduction to the economic concepts and quantitative methods used in agricultural and resource economics. Topics include supply and demand analysis, optimization, consumer and producer theory, market equilibrium, welfare economics, trade policy, and decision under uncertainty. R is used throughout for analysis and visualization."
+  },
+  "github": {
+    "org": "ECON4002-2026-S1",
+    "repoPattern": "hw{week}-{team}",
+    "worksheetFiles": ["ANSWERS.md"],
+    "totalWeeks": 5
+  },
+  "courseSchedule": {
+    "semesterDates": {
+      "teachingStart": "2026-02-23",
+      "teachingEnd": "2026-05-22",
+      "swotvacStart": "2026-05-25",
+      "swotvacEnd": "2026-05-29",
+      "examsStart": "2026-05-30",
+      "examsEnd": "2026-06-13",
+      "breaks": [
+        {
+          "name": "Mid-semester Break",
+          "start": "2026-04-06",
+          "end": "2026-04-10"
+        }
+      ],
+      "publicHolidays": [
+        {
+          "name": "Labour Day",
+          "date": "2026-03-02"
+        },
+        {
+          "name": "Good Friday",
+          "date": "2026-04-03"
+        },
+        {
+          "name": "Easter Monday",
+          "date": "2026-04-06"
+        },
+        {
+          "name": "Anzac Day (observed)",
+          "date": "2026-04-27"
+        }
+      ]
+    },
+    "weeklySchedule": [
+      {
+        "day": "Monday",
+        "type": "lecture",
+        "time": "10:00",
+        "duration": 60,
+        "location": "TBA"
+      },
+      {
+        "day": "Wednesday",
+        "type": "lecture",
+        "time": "10:00",
+        "duration": 60,
+        "location": "TBA"
+      },
+      {
+        "day": "Friday",
+        "type": "tutorial",
+        "time": "10:00",
+        "duration": 60,
+        "location": "TBA"
+      }
+    ],
+    "assessments": [
+      {
+        "id": "hw1",
+        "name": "Homework 1",
+        "type": "assignment",
+        "weight": 2.5,
+        "dueDate": "2026-03-16T23:59:00+08:00",
+        "weekNumber": 3,
+        "description": "Weekly homework submitted via GitHub. See your hw01 repository.",
+        "reminderDays": [7, 3, 1]
+      },
+      {
+        "id": "assignment1",
+        "name": "Assignment 1",
+        "type": "assignment",
+        "weight": 15,
+        "dueDate": "2026-03-25T23:59:00+08:00",
+        "weekNumber": 4,
+        "description": "Written assignment submitted as PDF via LMS. Mathematical and economic analysis covering Weeks 1–4.",
+        "submissionUrl": "https://lms.uwa.edu.au",
+        "reminderDays": [14, 7, 3, 1]
+      },
+      {
+        "id": "hw2",
+        "name": "Homework 2",
+        "type": "assignment",
+        "weight": 2.5,
+        "dueDate": "2026-04-13T23:59:00+08:00",
+        "weekNumber": 7,
+        "description": "Weekly homework submitted via GitHub. See your hw02 repository.",
+        "reminderDays": [7, 3, 1]
+      },
+      {
+        "id": "hw3",
+        "name": "Homework 3",
+        "type": "assignment",
+        "weight": 2.5,
+        "dueDate": "2026-04-27T23:59:00+08:00",
+        "weekNumber": 9,
+        "description": "Weekly homework submitted via GitHub. See your hw03 repository.",
+        "reminderDays": [7, 3, 1]
+      },
+      {
+        "id": "assignment2",
+        "name": "Assignment 2",
+        "type": "assignment",
+        "weight": 20,
+        "dueDate": "2026-05-06T23:59:00+08:00",
+        "weekNumber": 10,
+        "description": "Written assignment submitted as PDF via LMS. Consumer and producer theory with R analysis.",
+        "submissionUrl": "https://lms.uwa.edu.au",
+        "reminderDays": [14, 7, 3, 1]
+      },
+      {
+        "id": "hw4",
+        "name": "Homework 4",
+        "type": "assignment",
+        "weight": 2.5,
+        "dueDate": "2026-05-13T23:59:00+08:00",
+        "weekNumber": 11,
+        "description": "Weekly homework submitted via GitHub. See your hw04 repository.",
+        "reminderDays": [7, 3, 1]
+      },
+      {
+        "id": "assignment3",
+        "name": "Assignment 3",
+        "type": "assignment",
+        "weight": 20,
+        "dueDate": "2026-05-20T23:59:00+08:00",
+        "weekNumber": 12,
+        "description": "Written assignment submitted as PDF via LMS. Market equilibrium, trade policy, welfare economics.",
+        "submissionUrl": "https://lms.uwa.edu.au",
+        "reminderDays": [14, 7, 3, 1]
+      },
+      {
+        "id": "final_practice",
+        "name": "Final Test Practice",
+        "type": "assignment",
+        "weight": 0,
+        "dueDate": "2026-05-27T23:59:00+08:00",
+        "weekNumber": 13,
+        "description": "Non-graded practice set for the final test. Submitted via GitHub. See your hw05 repository.",
+        "reminderDays": [7, 3, 1]
+      },
+      {
+        "id": "participation",
+        "name": "Class Participation",
+        "type": "other",
+        "weight": 10,
+        "dueDate": "2026-05-22T17:00:00+08:00",
+        "weekNumber": 12,
+        "description": "Continuous assessment based on attendance and weekly homework completion.",
+        "reminderDays": []
+      },
+      {
+        "id": "final_test",
+        "name": "Final Test",
+        "type": "exam",
+        "weight": 35,
+        "dueDate": "2026-06-13T23:59:00+08:00",
+        "weekNumber": 16,
+        "description": "Not centrally scheduled. Arranged by instructor. Exact date TBA (30 May – 13 June).",
+        "reminderDays": [21, 14, 7, 3, 1]
+      }
+    ]
+  },
+  "outlineContent": "COVER:\nECON4002: Core Concepts in Agricultural and Applied Economics\nUniversity of Western Australia\nSemester 1, 2026\nInstructor: Atakelty Hailu\n\nDESCRIPTION:\nA rigorous introduction to the economic concepts and quantitative methods used in agricultural and resource economics. Topics include supply and demand analysis, optimization, consumer and producer theory, market equilibrium, welfare economics, trade policy, and decision under uncertainty. R is used throughout for analysis and visualization.\n\nCONTACTS:\nInstructor: Atakelty Hailu\nEmail: atakelty.hailu@uwa.edu.au\nOffice: Social Sciences Building 380\nOffice Hours: Wednesdays 2–4pm or by appointment\n\nTOPICS:\nWeek 1: Foundations — Economics & R Setup\nWeek 2: Mathematical Methods I — Linear Algebra\nWeek 3: Mathematical Methods II — Calculus & Functions\nWeek 4: Optimization — Unconstrained and Constrained\nWeek 5: Consumer Theory I — Utility & Marshallian Demand\nWeek 6: Consumer Theory II — Duality & Welfare\nWeek 7: Producer Theory I — Technology & Costs\nWeek 8: Producer Theory II — Profit Maximization & Industry\nWeek 9: Market Equilibrium Analysis\nWeek 10: International Trade and Policy\nWeek 11: Welfare Economics — Measuring Economic Well-Being\nWeek 12: Decision Under Uncertainty\n\nASSESSMENTS:\nHomework 1: 2.5% — due Mon 16 March (via GitHub)\nAssignment 1: 15% — due Wed 25 March (PDF via LMS)\nHomework 2: 2.5% — due Mon 13 April (via GitHub)\nHomework 3: 2.5% — due Mon 27 April (via GitHub)\nAssignment 2: 20% — due Wed 6 May (PDF via LMS)\nHomework 4: 2.5% — due Wed 13 May (via GitHub)\nAssignment 3: 20% — due Wed 20 May (PDF via LMS)\nClass Participation: 10% — continuous (attendance + homework)\nFinal Test Practice: ungraded — due Wed 27 May (via GitHub)\nFinal Test: 35% — exam period 30 May – 13 June (exact date TBA)\n\nRESPONSIBILITIES:\nStudents are expected to attend all classes, complete readings before class, submit homeworks via GitHub on time, and submit written assignments as PDF via LMS. Late submissions incur a 5% per day penalty. AI tools may be used as study aids but not to complete assessments.",
+  "weeklyResources": {
+    "1": {
+      "week": 1,
+      "title": "Foundations — Economics & R Setup",
+      "lectureNotes": [
+        {
+          "id": "w1_lesson",
+          "title": "Week 1: Foundations — Economics & R Setup",
+          "description": "Introduction to formal economic analysis, R setup, basic commands, and supply-demand models",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week1/week1_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        },
+        {
+          "id": "w1_r_setup",
+          "title": "Getting Started with R and RStudio",
+          "description": "Step-by-step guide to installing and configuring R, RStudio, and key packages",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week1/GettingStartedWithRandRStudio.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w1_practice",
+          "title": "Week 1 Practice Questions",
+          "description": "Foundational economics concepts and R basics practice problems",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week1/week1_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w1_code",
+          "title": "R Code Reference: Foundations",
+          "description": "Essential R code snippets for Week 1 — arithmetic, variables, functions, and basic economic models",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week1/week1_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "2": {
+      "week": 2,
+      "title": "Mathematical Methods I — Linear Algebra",
+      "lectureNotes": [
+        {
+          "id": "w2_lesson",
+          "title": "Week 2: Mathematical Methods I — Linear Algebra",
+          "description": "Vectors, matrices, systems of equations, and linear economic models",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week2/week2_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w2_practice",
+          "title": "Week 2 Practice Questions",
+          "description": "Linear algebra and matrix operations practice",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week2/week2_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w2_code",
+          "title": "R Code Reference: Linear Algebra",
+          "description": "R code for matrix operations, solving linear systems, and visualization",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week2/week2_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "3": {
+      "week": 3,
+      "title": "Mathematical Methods II — Calculus & Functions",
+      "lectureNotes": [
+        {
+          "id": "w3_lesson",
+          "title": "Week 3: Mathematical Methods II — Calculus & Functions",
+          "description": "Derivatives, optimization conditions, comparative statics, and economic applications",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week3/week3_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w3_practice",
+          "title": "Week 3 Practice Questions",
+          "description": "Calculus and function analysis practice",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week3/week3_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w3_code",
+          "title": "R Code Reference: Calculus",
+          "description": "R code for numerical differentiation, function plots, and optimization",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week3/week3_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "4": {
+      "week": 4,
+      "title": "Optimization — Unconstrained and Constrained",
+      "lectureNotes": [
+        {
+          "id": "w4_lesson",
+          "title": "Week 4: Optimization — Unconstrained and Constrained",
+          "description": "First- and second-order conditions, Lagrangian method, Kuhn-Tucker conditions",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week4/week4_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w4_practice",
+          "title": "Week 4 Practice Questions",
+          "description": "Optimization problems — unconstrained and constrained",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week4/week4_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w4_code",
+          "title": "R Code Reference: Optimization",
+          "description": "R code for numerical optimization, constraint handling, and economic examples",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week4/week4_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "5": {
+      "week": 5,
+      "title": "Consumer Theory I — Utility & Marshallian Demand",
+      "lectureNotes": [
+        {
+          "id": "w5_lesson",
+          "title": "Week 5: Consumer Theory I — Utility & Marshallian Demand",
+          "description": "Preferences, utility functions, budget constraint, and utility maximization",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week5/week5_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w5_practice",
+          "title": "Week 5 Practice Questions",
+          "description": "Consumer utility maximization and demand derivation",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week5/week5_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w5_code",
+          "title": "R Code Reference: Consumer Theory I",
+          "description": "R code for utility functions, indifference curves, and demand analysis",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week5/week5_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "6": {
+      "week": 6,
+      "title": "Consumer Theory II — Duality & Welfare",
+      "lectureNotes": [
+        {
+          "id": "w6_lesson",
+          "title": "Week 6: Consumer Theory II — Duality & Welfare",
+          "description": "Expenditure minimization, Hicksian demand, duality, and welfare measures",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week6/week6_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w6_practice",
+          "title": "Week 6 Practice Questions",
+          "description": "Duality theory and welfare measurement exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week6/week6_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w6_code",
+          "title": "R Code Reference: Consumer Theory II",
+          "description": "R code for expenditure functions, compensated demand, and welfare calculations",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week6/week6_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "7": {
+      "week": 7,
+      "title": "Producer Theory I — Technology & Costs",
+      "lectureNotes": [
+        {
+          "id": "w7_lesson",
+          "title": "Week 7: Producer Theory I — Technology & Costs",
+          "description": "Production functions, cost minimization, and cost curves",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week7/week7_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w7_practice",
+          "title": "Week 7 Practice Questions",
+          "description": "Production technology and cost function exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week7/week7_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": []
+    },
+    "8": {
+      "week": 8,
+      "title": "Producer Theory II — Profit Maximization & Industry",
+      "lectureNotes": [
+        {
+          "id": "w8_lesson",
+          "title": "Week 8: Producer Theory II — Profit Maximization & Industry",
+          "description": "Profit maximization, supply curves, and industry equilibrium",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week8/week8_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w8_practice",
+          "title": "Week 8 Practice Questions",
+          "description": "Profit maximization and industry equilibrium exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week8/week8_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w8_code",
+          "title": "R Code Reference: Producer Theory",
+          "description": "R code for cost functions, profit maximization, and supply analysis",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week8/week8_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "9": {
+      "week": 9,
+      "title": "Market Equilibrium Analysis",
+      "lectureNotes": [
+        {
+          "id": "w9_lesson",
+          "title": "Week 9: Market Equilibrium Analysis",
+          "description": "Competitive equilibrium, comparative statics, and market interventions",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week9/week9_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w9_practice",
+          "title": "Week 9 Practice Questions",
+          "description": "Market equilibrium and policy analysis exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week9/week9_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w9_code",
+          "title": "R Code Reference: Market Equilibrium",
+          "description": "R code for equilibrium computation, comparative statics, and policy simulations",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week9/week9_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "10": {
+      "week": 10,
+      "title": "International Trade and Policy",
+      "lectureNotes": [
+        {
+          "id": "w10_lesson",
+          "title": "Week 10: International Trade and Policy",
+          "description": "Trade theory, tariffs, quotas, and welfare effects of trade policy",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week10/week10_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w10_practice",
+          "title": "Week 10 Practice Questions",
+          "description": "International trade and policy analysis exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week10/week10_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w10_code",
+          "title": "R Code Reference: Trade Policy",
+          "description": "R code for trade models, tariff analysis, and welfare calculations",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week10/week10_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "11": {
+      "week": 11,
+      "title": "Welfare Economics — Measuring Economic Well-Being",
+      "lectureNotes": [
+        {
+          "id": "w11_lesson",
+          "title": "Week 11: Welfare Economics — Measuring Economic Well-Being",
+          "description": "Social welfare functions, Pareto efficiency, externalities, and public goods",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week11/week11_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w11_practice",
+          "title": "Week 11 Practice Questions",
+          "description": "Welfare economics and market failure exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week11/week11_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w11_code",
+          "title": "R Code Reference: Welfare Economics",
+          "description": "R code for welfare measurement, deadweight loss, and externality analysis",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week11/week11_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    },
+    "12": {
+      "week": 12,
+      "title": "Decision Under Uncertainty",
+      "lectureNotes": [
+        {
+          "id": "w12_lesson",
+          "title": "Week 12: Decision Under Uncertainty",
+          "description": "Expected utility theory, risk aversion, insurance, and agricultural risk management",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week12/week12_lesson.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "videos": [],
+      "notebooks": [],
+      "exercises": [
+        {
+          "id": "w12_practice",
+          "title": "Week 12 Practice Questions",
+          "description": "Decision under uncertainty and risk management exercises",
+          "type": "exercise",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week12/week12_practice.json",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ],
+      "additionalReadings": [
+        {
+          "id": "w12_code",
+          "title": "R Code Reference: Uncertainty",
+          "description": "R code for expected utility, risk analysis, and simulation",
+          "type": "lectureNotes",
+          "url": "https://raw.githubusercontent.com/ECON4002-2026-S1/econ4002-content/main/Week12/week12_code_snippets.md",
+          "source": "github",
+          "requiresAuth": false
+        }
+      ]
+    }
+  }
+}

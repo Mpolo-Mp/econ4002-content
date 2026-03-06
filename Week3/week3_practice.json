@@ -1,0 +1,353 @@
+{
+  "week": 3,
+  "title": "Calculus & Functions",
+  "learning_objectives": [
+    "Differentiate economic functions",
+    "Calculate partial derivatives",
+    "Compute and interpret elasticities",
+    "Apply chain and product rules",
+    "Work with Cobb-Douglas and other functional forms",
+    "Implement numerical differentiation in R"
+  ],
+  "problems": [
+    {
+      "id": "W3-P1a",
+      "type": "computational",
+      "topic": "Basic Derivatives",
+      "difficulty": "basic",
+      "question": "Find the derivative of f(x) = 5x⁴ - 3x² + 7x - 12",
+      "hints": [
+        "Apply power rule to each term",
+        "d/dx(xⁿ) = n·x^(n-1)",
+        "Derivative of constant is 0"
+      ],
+      "solution": {
+        "steps": [
+          "f'(x) = 5·4x³ - 3·2x + 7·1 - 0",
+          "f'(x) = 20x³ - 6x + 7"
+        ],
+        "answer": "f'(x) = 20x³ - 6x + 7",
+        "r_verification": "D(expression(5*x^4 - 3*x^2 + 7*x - 12), 'x')"
+      }
+    },
+    {
+      "id": "W3-P1d",
+      "type": "computational",
+      "topic": "Product Rule",
+      "difficulty": "intermediate",
+      "question": "Find the derivative of p(x) = x² · eˣ",
+      "hints": [
+        "Product rule: (fg)' = f'g + fg'",
+        "Let f = x², g = eˣ",
+        "Remember: d/dx(eˣ) = eˣ"
+      ],
+      "solution": {
+        "steps": [
+          "Let f(x) = x², g(x) = eˣ",
+          "f'(x) = 2x, g'(x) = eˣ",
+          "p'(x) = f'g + fg' = 2x·eˣ + x²·eˣ",
+          "p'(x) = eˣ(2x + x²) = eˣ·x(2 + x)"
+        ],
+        "answer": "p'(x) = eˣ(x² + 2x)"
+      }
+    },
+    {
+      "id": "W3-P1f",
+      "type": "computational",
+      "topic": "Chain Rule",
+      "difficulty": "intermediate",
+      "question": "Find the derivative of r(x) = (3x² + 2)⁴",
+      "hints": [
+        "Chain rule: d/dx[f(g(x))] = f'(g(x))·g'(x)",
+        "Outer function: u⁴, inner function: 3x² + 2",
+        "Derivative of outer: 4u³, derivative of inner: 6x"
+      ],
+      "solution": {
+        "steps": [
+          "Let u = 3x² + 2 (inner function)",
+          "r = u⁴ (outer function)",
+          "dr/du = 4u³",
+          "du/dx = 6x",
+          "dr/dx = dr/du · du/dx = 4u³ · 6x = 24x(3x² + 2)³"
+        ],
+        "answer": "r'(x) = 24x(3x² + 2)³"
+      }
+    },
+    {
+      "id": "W3-P2a",
+      "type": "application",
+      "topic": "Marginal Revenue",
+      "difficulty": "intermediate",
+      "question": "TR(Q) = 100Q - 2Q². Find MR, where MR = 0, and interpret.",
+      "solution": {
+        "MR": "MR = dTR/dQ = 100 - 4Q",
+        "MR_zero": {
+          "derivation": "100 - 4Q = 0 → Q = 25",
+          "Q_star": 25
+        },
+        "interpretation": "At Q = 25, additional units add zero to revenue. This is the revenue-maximizing quantity. For Q < 25, MR > 0 (more output increases revenue). For Q > 25, MR < 0 (more output decreases revenue).",
+        "r_code": "TR <- function(Q) 100*Q - 2*Q^2\nMR <- function(Q) 100 - 4*Q\noptimize(TR, c(0, 100), maximum = TRUE)"
+      }
+    },
+    {
+      "id": "W3-P3b",
+      "type": "computational",
+      "topic": "Partial Derivatives - Cobb-Douglas",
+      "difficulty": "intermediate",
+      "question": "For g(L,K) = 50L^0.4·K^0.6, find all first and second-order partial derivatives.",
+      "hints": [
+        "Treat other variable as constant",
+        "∂/∂L(L^α) = αL^(α-1)",
+        "For cross-partial, differentiate ∂g/∂L with respect to K"
+      ],
+      "solution": {
+        "first_order": {
+          "gL": "∂g/∂L = 50·0.4·L^(-0.6)·K^0.6 = 20L^(-0.6)K^0.6 = 20(K/L)^0.6",
+          "gK": "∂g/∂K = 50·0.6·L^0.4·K^(-0.4) = 30L^0.4K^(-0.4) = 30(L/K)^0.4"
+        },
+        "second_order": {
+          "gLL": "∂²g/∂L² = 20·(-0.6)·L^(-1.6)·K^0.6 = -12L^(-1.6)K^0.6",
+          "gKK": "∂²g/∂K² = 30·(-0.4)·L^0.4·K^(-1.4) = -12L^0.4K^(-1.4)",
+          "gLK": "∂²g/∂L∂K = 20·0.6·L^(-0.6)·K^(-0.4) = 12L^(-0.6)K^(-0.4)",
+          "gKL": "∂²g/∂K∂L = 30·0.4·L^(-0.6)·K^(-0.4) = 12L^(-0.6)K^(-0.4)"
+        },
+        "youngs_theorem": "gLK = gKL = 12L^(-0.6)K^(-0.4) ✓"
+      }
+    },
+    {
+      "id": "W3-P5",
+      "type": "application",
+      "topic": "Price Elasticity",
+      "difficulty": "intermediate",
+      "question": "For Q = 200 - 4P, calculate elasticity at P = 10, 25, 40. Find unit elastic price.",
+      "hints": [
+        "ε = (dQ/dP)·(P/Q)",
+        "For linear demand, dQ/dP is constant",
+        "Unit elastic when |ε| = 1"
+      ],
+      "solution": {
+        "formula": {
+          "dQ_dP": -4,
+          "elasticity_general": "ε = -4 · P/(200-4P) = -4P/(200-4P) = -P/(50-P)"
+        },
+        "calculations": {
+          "P_10": {
+            "Q": 160,
+            "epsilon": -0.25,
+            "classification": "Inelastic"
+          },
+          "P_25": {
+            "Q": 100,
+            "epsilon": -1.0,
+            "classification": "Unit elastic"
+          },
+          "P_40": {
+            "Q": 40,
+            "epsilon": -4.0,
+            "classification": "Elastic"
+          }
+        },
+        "unit_elastic": {
+          "derivation": "|-P/(50-P)| = 1 → P = 50-P → 2P = 50 → P = 25",
+          "price": 25
+        },
+        "revenue_implications": {
+          "P_less_than_25": "Demand inelastic: raise price to increase revenue",
+          "P_greater_than_25": "Demand elastic: lower price to increase revenue"
+        },
+        "r_code": [
+          "demand <- function(P) 200 - 4*P",
+          "elasticity <- function(P) {",
+          "  dQ_dP <- -4",
+          "  Q <- demand(P)",
+          "  return(dQ_dP * P / Q)",
+          "}",
+          "sapply(c(10, 25, 40), elasticity)"
+        ]
+      }
+    },
+    {
+      "id": "W3-P6",
+      "type": "application",
+      "topic": "Log-Linear Demand",
+      "difficulty": "advanced",
+      "question": "ln(Q) = 5.2 - 0.8·ln(P) + 0.5·ln(M). Find price and income elasticities. Interpret.",
+      "hints": [
+        "In log-log models, coefficients ARE elasticities",
+        "d(ln Q)/d(ln P) = price elasticity",
+        "Income elasticity > 1 means luxury good"
+      ],
+      "solution": {
+        "price_elasticity": {
+          "value": -0.8,
+          "interpretation": "1% price increase → 0.8% quantity decrease. Demand is inelastic."
+        },
+        "income_elasticity": {
+          "value": 0.5,
+          "interpretation": "1% income increase → 0.5% quantity increase. Positive means normal good."
+        },
+        "good_classification": {
+          "normal_vs_inferior": "Normal good (income elasticity > 0)",
+          "luxury_vs_necessity": "Necessity (income elasticity < 1)"
+        },
+        "price_change_effect": "10% price increase → 8% quantity decrease",
+        "non_log_form": "Q = e^5.2 · P^(-0.8) · M^0.5 ≈ 181.3 · P^(-0.8) · M^0.5"
+      }
+    },
+    {
+      "id": "W3-P8",
+      "type": "application",
+      "topic": "Cobb-Douglas Production",
+      "difficulty": "intermediate",
+      "question": "Q = 10L^0.4·K^0.6. At L=100, K=200: find output, MPs, MRTS, returns to scale.",
+      "solution": {
+        "output": {
+          "calculation": "Q = 10·(100)^0.4·(200)^0.6 = 10·6.31·30.31 = 1912.4",
+          "value": 1912.4
+        },
+        "marginal_products": {
+          "MP_L": {
+            "formula": "MP_L = 0.4·Q/L = 0.4·1912.4/100 = 7.65",
+            "value": 7.65
+          },
+          "MP_K": {
+            "formula": "MP_K = 0.6·Q/K = 0.6·1912.4/200 = 5.74",
+            "value": 5.74
+          }
+        },
+        "MRTS": {
+          "formula": "-MP_L/MP_K = -7.65/5.74 = -1.33",
+          "value": -1.33,
+          "interpretation": "Can substitute 1.33 units of K for 1 unit of L while maintaining output"
+        },
+        "returns_to_scale": {
+          "sum_of_exponents": "0.4 + 0.6 = 1.0",
+          "classification": "Constant returns to scale (doubling inputs doubles output)"
+        },
+        "output_elasticity_verification": {
+          "epsilon_L": "∂Q/∂L · L/Q = 0.4·Q/L · L/Q = 0.4 ✓"
+        },
+        "r_code": [
+          "Q <- function(L, K) 10 * L^0.4 * K^0.6",
+          "MP_L <- function(L, K) 0.4 * Q(L,K) / L",
+          "MP_K <- function(L, K) 0.6 * Q(L,K) / K",
+          "MRTS <- function(L, K) -MP_L(L,K) / MP_K(L,K)",
+          "",
+          "Q(100, 200)",
+          "MP_L(100, 200)",
+          "MP_K(100, 200)",
+          "MRTS(100, 200)"
+        ]
+      }
+    },
+    {
+      "id": "W3-P9a",
+      "type": "application",
+      "topic": "Growth Rates",
+      "difficulty": "intermediate",
+      "question": "Y(t) = 100e^(0.03t). What is the growth rate? How long to double?",
+      "solution": {
+        "growth_rate": {
+          "derivation": "dY/dt = 100·0.03·e^(0.03t) = 0.03Y",
+          "g": "3% per year"
+        },
+        "doubling_time": {
+          "exact": "Y(T) = 2Y(0) → e^(0.03T) = 2 → T = ln(2)/0.03 = 23.1 years",
+          "rule_of_70": "70/3 ≈ 23.3 years"
+        }
+      }
+    },
+    {
+      "id": "W3-P10",
+      "type": "application",
+      "topic": "Isoquant and MRTS",
+      "difficulty": "advanced",
+      "question": "For Q = L^0.5·K^0.5: derive MRTS, calculate at L=25, K=100.",
+      "hints": [
+        "Total differential: dQ = (∂Q/∂L)dL + (∂Q/∂K)dK",
+        "On isoquant: dQ = 0",
+        "Solve for dK/dL"
+      ],
+      "solution": {
+        "total_differential": "dQ = 0.5L^(-0.5)K^0.5·dL + 0.5L^0.5K^(-0.5)·dK",
+        "MRTS_derivation": {
+          "on_isoquant": "0 = 0.5(K/L)^0.5·dL + 0.5(L/K)^0.5·dK",
+          "solving": "dK/dL = -(K/L)^0.5 / (L/K)^0.5 = -K/L"
+        },
+        "MRTS_formula": "MRTS = -K/L",
+        "at_L25_K100": {
+          "output": "Q = 25^0.5 · 100^0.5 = 5 · 10 = 50",
+          "MRTS": "-100/25 = -4",
+          "interpretation": "To maintain Q=50, can give up 4 units of K for each additional unit of L"
+        },
+        "r_code": [
+          "# Isoquant for Q = 50",
+          "L_range <- seq(1, 100, by = 1)",
+          "K_isoquant <- 50^2 / L_range  # K = Q²/L",
+          "",
+          "plot(L_range, K_isoquant, type = 'l', col = 'blue',",
+          "     xlab = 'Labor', ylab = 'Capital',",
+          "     main = 'Isoquant Q = 50')",
+          "points(25, 100, pch = 19, col = 'red')"
+        ]
+      }
+    },
+    {
+      "id": "W3-P12",
+      "type": "computational",
+      "topic": "Numerical Differentiation in R",
+      "difficulty": "intermediate",
+      "question": "Create numerical_derivative and elasticity functions in R. Test on f(x)=x³ and Q=500P^(-0.8).",
+      "solution": {
+        "r_code": [
+          "# Part a: Numerical derivative",
+          "numerical_derivative <- function(f, x, h = 1e-6) {",
+          "  (f(x + h) - f(x - h)) / (2 * h)",
+          "}",
+          "",
+          "# Part b: Test on f(x) = x³",
+          "f <- function(x) x^3",
+          "numerical_derivative(f, 2)  # Should be 12",
+          "3 * 2^2                     # Analytical: 12",
+          "",
+          "# Part c: Elasticity function",
+          "elasticity <- function(demand_fn, P) {",
+          "  dQ_dP <- numerical_derivative(demand_fn, P)",
+          "  Q <- demand_fn(P)",
+          "  return(dQ_dP * P / Q)",
+          "}",
+          "",
+          "# Part d: Constant elasticity demand",
+          "demand <- function(P) 500 * P^(-0.8)",
+          "",
+          "for (P in c(10, 20, 30)) {",
+          "  e <- elasticity(demand, P)",
+          "  cat('At P =', P, ': ε =', round(e, 3), '\\n')",
+          "}",
+          "# All should be -0.8 (constant elasticity)"
+        ],
+        "explanation": "For Q = aP^b, the elasticity is always b (constant). This is why economists call this form 'constant elasticity demand'."
+      }
+    }
+  ],
+  "ai_tutor_guidance": {
+    "common_errors": [
+      "Forgetting chain rule when differentiating composite functions",
+      "Mixing up ∂ (partial) and d (total) derivatives",
+      "Computing elasticity as just dQ/dP without the (P/Q) term",
+      "Confusing marginal product with output elasticity",
+      "Sign errors in MRTS (should be negative)"
+    ],
+    "socratic_prompts": [
+      "What does the sign of the elasticity tell you?",
+      "Why is the output elasticity constant for Cobb-Douglas?",
+      "What economic condition makes MRTS = -w/r?",
+      "How does diminishing marginal product appear mathematically?"
+    ],
+    "extension_questions": [
+      "How would you find the elasticity of substitution?",
+      "What happens to MRTS as you move along an isoquant?",
+      "Why do economists prefer log-linear specifications?"
+    ]
+  }
+}

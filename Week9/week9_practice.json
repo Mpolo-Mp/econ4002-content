@@ -1,0 +1,418 @@
+{
+  "week": 9,
+  "title": "Market Equilibrium: Prices, Efficiency & Policy",
+  "learning_objectives": [
+    "Aggregate individual demand and supply curves",
+    "Solve for competitive market equilibrium",
+    "Calculate consumer and producer surplus",
+    "Analyze welfare effects of taxes and subsidies",
+    "Calculate deadweight loss",
+    "Determine long-run equilibrium with entry/exit"
+  ],
+  "problems": [
+    {
+      "id": "W9-P1",
+      "type": "computational",
+      "topic": "Demand Aggregation",
+      "difficulty": "basic",
+      "question": "Two consumers have individual demand curves: Q₁ᵈ = 12 - 2p, Q₂ᵈ = 10 - p. (a) At what price does Consumer 1 drop out? (b) Derive the aggregate demand curve. (c) Calculate Qᵈ at p = 4.",
+      "hints": [
+        "A consumer drops out when their demand becomes zero",
+        "Aggregate by horizontal summation at each price"
+      ],
+      "solution": {
+        "a": {
+          "dropout_price": "Consumer 1 drops out when Q₁ᵈ = 0: 12 - 2p = 0 → p = 6"
+        },
+        "b": {
+          "for_p_leq_6": "Both active: Qᵈ = (12 - 2p) + (10 - p) = 22 - 3p",
+          "for_6_lt_p_leq_10": "Only Consumer 2: Qᵈ = 10 - p",
+          "for_p_gt_10": "Qᵈ = 0",
+          "aggregate": "Qᵈ(p) = {22 - 3p if p ≤ 6; 10 - p if 6 < p ≤ 10; 0 if p > 10}"
+        },
+        "c": {
+          "calculation": "At p = 4: Qᵈ = 22 - 3(4) = 22 - 12 = 10",
+          "breakdown": "Q₁ᵈ = 12 - 8 = 4, Q₂ᵈ = 10 - 4 = 6, Total = 10 ✓"
+        }
+      }
+    },
+    {
+      "id": "W9-P2",
+      "type": "computational",
+      "topic": "Supply Aggregation",
+      "difficulty": "basic",
+      "question": "100 identical wheat farmers each have supply yᵢ = 3p - 6 for p ≥ 2. (a) Shutdown price? (b) Market supply curve? (c) Total supply at p = 5?",
+      "solution": {
+        "a": {
+          "shutdown": "Individual supply is zero when 3p - 6 = 0 → p = 2",
+          "interpretation": "Farmers won't produce below $2 (this is their AVC_min)"
+        },
+        "b": {
+          "market_supply": "S(p) = 100 × (3p - 6) = 300p - 600 for p ≥ 2"
+        },
+        "c": {
+          "calculation": "S(5) = 300(5) - 600 = 1500 - 600 = 900 units",
+          "per_firm": "Each firm produces: 3(5) - 6 = 9 units"
+        }
+      }
+    },
+    {
+      "id": "W9-P3",
+      "type": "computational",
+      "topic": "Market Equilibrium",
+      "difficulty": "intermediate",
+      "question": "Demand: Qᵈ = 22 - 3p. Supply: Qˢ = p - 3 (for p ≥ 3). (a) Find equilibrium. (b) Verify. (c) What happens if p = 7?",
+      "hints": [
+        "Set Qᵈ = Qˢ and solve for p",
+        "At p = 7, compare quantities demanded and supplied"
+      ],
+      "solution": {
+        "a": {
+          "equilibrium_condition": "22 - 3p = p - 3",
+          "solve": "25 = 4p → p* = 6.25",
+          "quantity": "Q* = 22 - 3(6.25) = 22 - 18.75 = 3.25"
+        },
+        "b": {
+          "verify_demand": "Qᵈ = 22 - 3(6.25) = 3.25",
+          "verify_supply": "Qˢ = 6.25 - 3 = 3.25",
+          "conclusion": "Qᵈ = Qˢ = 3.25 ✓"
+        },
+        "c": {
+          "at_p_7": "Qᵈ = 22 - 21 = 1, Qˢ = 7 - 3 = 4",
+          "excess_supply": "Qˢ - Qᵈ = 4 - 1 = 3 units surplus",
+          "adjustment": "Excess supply → price falls → firms reduce output, consumers buy more → move toward equilibrium"
+        }
+      }
+    },
+    {
+      "id": "W9-P4",
+      "type": "computational",
+      "topic": "Consumer and Producer Surplus",
+      "difficulty": "intermediate",
+      "question": "Using Qᵈ = 22 - 3p, Qˢ = p - 3: (a) Write inverse functions. (b) Calculate CS. (c) Calculate PS. (d) Total welfare?",
+      "hints": [
+        "Inverse demand: solve for p in terms of Q",
+        "CS = area of triangle below demand, above p*"
+      ],
+      "solution": {
+        "a": {
+          "inverse_demand": "Pᵈ = (22 - Q)/3 = 7.33 - Q/3",
+          "inverse_supply": "Pˢ = Q + 3",
+          "intercepts": "Demand intercept: 7.33, Supply intercept: 3"
+        },
+        "b": {
+          "CS_formula": "CS = ½ × (P_max - p*) × Q*",
+          "calculation": "CS = ½ × (7.33 - 6.25) × 3.25 = ½ × 1.08 × 3.25 = 1.76"
+        },
+        "c": {
+          "PS_formula": "PS = ½ × (p* - P_min) × Q*",
+          "calculation": "PS = ½ × (6.25 - 3) × 3.25 = ½ × 3.25 × 3.25 = 5.28"
+        },
+        "d": {
+          "total_welfare": "W = CS + PS = 1.76 + 5.28 = 7.04"
+        }
+      }
+    },
+    {
+      "id": "W9-P5",
+      "type": "application",
+      "topic": "Tax Analysis",
+      "difficulty": "intermediate",
+      "question": "Market: Qᵈ = 100 - 5p, Qˢ = 3p - 20. A tax of t = 4 per unit is imposed on sellers. (a) Original equilibrium. (b) New equilibrium. (c) Tax revenue. (d) Deadweight loss.",
+      "hints": [
+        "With tax on sellers: pᵇ = pˢ + t",
+        "DWL = ½ × t × ΔQ"
+      ],
+      "solution": {
+        "a": {
+          "original_equilibrium": "100 - 5p = 3p - 20 → 120 = 8p → p* = 15",
+          "original_quantity": "Q* = 100 - 5(15) = 25"
+        },
+        "b": {
+          "tax_wedge": "pᵇ = pˢ + 4",
+          "new_equilibrium": "Demand: Q = 100 - 5pᵇ, Supply: Q = 3pˢ - 20 = 3(pᵇ - 4) - 20",
+          "solve": "100 - 5pᵇ = 3pᵇ - 32 → 132 = 8pᵇ → pᵇ = 16.5",
+          "seller_price": "pˢ = 16.5 - 4 = 12.5",
+          "new_quantity": "Qₜ = 100 - 5(16.5) = 17.5"
+        },
+        "c": {
+          "tax_revenue": "T = t × Qₜ = 4 × 17.5 = 70"
+        },
+        "d": {
+          "quantity_reduction": "ΔQ = Q* - Qₜ = 25 - 17.5 = 7.5",
+          "DWL": "DWL = ½ × t × ΔQ = ½ × 4 × 7.5 = 15"
+        }
+      }
+    },
+    {
+      "id": "W9-P6",
+      "type": "application",
+      "topic": "Subsidy Analysis",
+      "difficulty": "intermediate",
+      "question": "Market: Qᵈ = 100 - 5p, Qˢ = 3p - 20. Government provides s = 2 subsidy to producers. Find new equilibrium, subsidy cost, ΔCS, ΔPS, and DWL.",
+      "solution": {
+        "original": {
+          "p_star": "15",
+          "Q_star": "25"
+        },
+        "a": {
+          "subsidy_relation": "pˢ = pᵇ + 2 (sellers receive 2 more than buyers pay)",
+          "equilibrium": "100 - 5pᵇ = 3(pᵇ + 2) - 20 = 3pᵇ + 6 - 20 = 3pᵇ - 14",
+          "solve": "100 - 5pᵇ = 3pᵇ - 14 → 114 = 8pᵇ → pᵇ = 14.25",
+          "seller_price": "pˢ = 14.25 + 2 = 16.25",
+          "new_quantity": "Qₛ = 100 - 5(14.25) = 28.75"
+        },
+        "b": {
+          "subsidy_cost": "Cost = s × Qₛ = 2 × 28.75 = 57.50"
+        },
+        "c": {
+          "delta_CS": "Consumers pay less (14.25 vs 15) and buy more (28.75 vs 25)",
+          "CS_change": "ΔCS = (15 - 14.25) × 25 + ½ × 0.75 × 3.75 = 18.75 + 1.41 = 20.16 (gain)"
+        },
+        "d": {
+          "delta_PS": "Producers receive more (16.25 vs 15) and sell more",
+          "PS_change": "ΔPS = (16.25 - 15) × 25 + ½ × 1.25 × 3.75 = 31.25 + 2.34 = 33.59 (gain)"
+        },
+        "e": {
+          "welfare_analysis": "ΔCS + ΔPS = 20.16 + 33.59 = 53.75",
+          "subsidy_cost": "57.50",
+          "DWL": "DWL = 57.50 - 53.75 = 3.75",
+          "explanation": "Yes, DWL exists. Subsidy induces 3.75 units of 'excess' production where MC > value"
+        }
+      }
+    },
+    {
+      "id": "W9-P7",
+      "type": "application",
+      "topic": "Long-Run Equilibrium with Entry/Exit",
+      "difficulty": "advanced",
+      "question": "Firm cost: C(y) = 1 + y². Demand: Qᵈ = 22 - 3p. Find (a) MC, AC, efficient scale. (b) LR price. (c) Firm output. (d) Market quantity. (e) Number of firms. (f) Verify zero profit.",
+      "hints": [
+        "min AC occurs where MC = AC",
+        "LR equilibrium: p = min AC, π = 0"
+      ],
+      "solution": {
+        "a": {
+          "MC": "MC = dC/dy = 2y",
+          "AC": "AC = C/y = 1/y + y",
+          "min_AC": "dAC/dy = -1/y² + 1 = 0 → y² = 1 → y* = 1",
+          "AC_at_min": "AC(1) = 1/1 + 1 = 2"
+        },
+        "b": {
+          "LR_price": "p^LR = min AC = 2"
+        },
+        "c": {
+          "firm_output": "Each firm produces y* = 1 unit (efficient scale)"
+        },
+        "d": {
+          "market_quantity": "Q^LR = 22 - 3(2) = 22 - 6 = 16 units"
+        },
+        "e": {
+          "num_firms": "n = Q^LR / y* = 16 / 1 = 16 firms"
+        },
+        "f": {
+          "revenue": "TR = p × y = 2 × 1 = 2",
+          "cost": "TC = 1 + 1² = 2",
+          "profit": "π = TR - TC = 2 - 2 = 0 ✓"
+        }
+      }
+    },
+    {
+      "id": "W9-P8",
+      "type": "application",
+      "topic": "Short-Run vs Long-Run Dynamics",
+      "difficulty": "advanced",
+      "question": "Same market as W9-P7 but initially only 5 firms. Each has supply yᵢ = p/2. (a) Find SR equilibrium. (b) Calculate firm profit. (c) Will entry/exit occur? (d) Describe adjustment to LR.",
+      "solution": {
+        "a": {
+          "industry_supply": "S = 5 × (p/2) = 2.5p",
+          "SR_equilibrium": "22 - 3p = 2.5p → 22 = 5.5p → p_SR = 4",
+          "quantity": "Q_SR = 22 - 3(4) = 10"
+        },
+        "b": {
+          "firm_output": "yᵢ = 4/2 = 2",
+          "firm_revenue": "TR = 4 × 2 = 8",
+          "firm_cost": "TC = 1 + 2² = 5",
+          "firm_profit": "π = 8 - 5 = 3 > 0"
+        },
+        "c": {
+          "decision": "Since π = 3 > 0, new firms will ENTER the industry",
+          "incentive": "Positive economic profit attracts entry"
+        },
+        "d": {
+          "adjustment": [
+            "1. Entry increases number of firms",
+            "2. Industry supply shifts right",
+            "3. Price falls along demand curve",
+            "4. Each firm's output and profit fall",
+            "5. Entry continues until π = 0",
+            "6. Final: p = 2, n = 16, y = 1, π = 0"
+          ]
+        }
+      }
+    },
+    {
+      "id": "W9-P9",
+      "type": "application",
+      "topic": "Agricultural Market: Price Floor",
+      "difficulty": "advanced",
+      "question": "Barley: Qᵈ = 8 - 0.5p, Qˢ = p - 2 (million tonnes, p in $100/tonne). (a) Free market equilibrium. (b) CS and PS. (c) With price floor at p = 5: quantities? (d) Government purchase cost? (e) DWL?",
+      "solution": {
+        "a": {
+          "equilibrium": "8 - 0.5p = p - 2 → 10 = 1.5p → p* = 6.67 ($667/tonne)",
+          "quantity": "Q* = 8 - 0.5(6.67) = 4.67 million tonnes"
+        },
+        "b": {
+          "inverse_demand": "Pᵈ = 16 - 2Q (intercept at 16)",
+          "inverse_supply": "Pˢ = Q + 2 (intercept at 2)",
+          "CS": "CS = ½ × (16 - 6.67) × 4.67 = ½ × 9.33 × 4.67 = 21.8",
+          "PS": "PS = ½ × (6.67 - 2) × 4.67 = ½ × 4.67 × 4.67 = 10.9"
+        },
+        "c": {
+          "note": "Price floor at p = 5 < p* = 6.67 is NOT BINDING",
+          "correction": "Let's assume price floor at p = 8 instead",
+          "at_p_8": {
+            "quantity_demanded": "Qᵈ = 8 - 0.5(8) = 4",
+            "quantity_supplied": "Qˢ = 8 - 2 = 6",
+            "surplus": "Excess supply = 6 - 4 = 2 million tonnes"
+          }
+        },
+        "d": {
+          "government_purchase": "Cost = p × (Qˢ - Qᵈ) = 8 × 2 = 16 (in $100M = $1.6B)"
+        },
+        "e": {
+          "DWL_components": "Lost trades between Q at floor (4) and Q* (4.67)",
+          "DWL": "DWL = ½ × (8 - 6.67) × (4.67 - 4) = ½ × 1.33 × 0.67 = 0.45",
+          "plus_overproduction": "Additional DWL from producing 6 instead of 4.67"
+        }
+      }
+    },
+    {
+      "id": "W9-P10",
+      "type": "conceptual",
+      "topic": "First Welfare Theorem Violations",
+      "difficulty": "intermediate",
+      "question": "Explain why these situations violate First Welfare Theorem conditions: (a) One company controls 80% of fertilizer. (b) Factory pollutes river. (c) Farmers can't observe seed quality. (d) Contract enforcement takes 6 months.",
+      "solution": {
+        "a": {
+          "violation": "Market power (not perfect competition)",
+          "consequence": "Firm sets p > MC, produces Q < Q_competitive",
+          "inefficiency": "Deadweight loss from restricted output"
+        },
+        "b": {
+          "violation": "Negative externality",
+          "consequence": "Factory's private cost < social cost",
+          "inefficiency": "Overproduction of polluting good, downstream farmers bear uncompensated costs"
+        },
+        "c": {
+          "violation": "Asymmetric information",
+          "consequence": "Adverse selection: sellers know quality, buyers don't",
+          "inefficiency": "Market may collapse (lemons problem), high-quality seeds driven out"
+        },
+        "d": {
+          "violation": "Positive transaction costs",
+          "consequence": "Some beneficial trades not completed",
+          "inefficiency": "Small contracts not worth pursuing, reduces market participation"
+        }
+      }
+    },
+    {
+      "id": "W9-P11",
+      "type": "computational",
+      "topic": "Multi-Consumer Aggregation",
+      "difficulty": "intermediate",
+      "question": "Three consumers: Qₐ = 20 - 4p (p ≤ 5), Qᵦ = 15 - 3p (p ≤ 5), Q_c = 8 - p (p ≤ 8). (a) Exit prices for A, B? (b) Aggregate demand function. (c) Graph with kinks.",
+      "solution": {
+        "a": {
+          "A_exits": "20 - 4p = 0 → p = 5",
+          "B_exits": "15 - 3p = 0 → p = 5",
+          "C_exits": "8 - p = 0 → p = 8"
+        },
+        "b": {
+          "for_p_leq_5": "All active: Qᵈ = (20-4p) + (15-3p) + (8-p) = 43 - 8p",
+          "for_5_lt_p_leq_8": "Only C active: Qᵈ = 8 - p",
+          "for_p_gt_8": "Qᵈ = 0",
+          "aggregate": "Qᵈ(p) = {43 - 8p if p ≤ 5; 8 - p if 5 < p ≤ 8; 0 if p > 8}"
+        },
+        "c": {
+          "key_points": [
+            "(Q=0, p=8): C's intercept",
+            "(Q=3, p=5): Kink point",
+            "(Q=43, p=0): Full intercept"
+          ],
+          "kink": "At p = 5: from steep slope (-8) to flat slope (-1)"
+        }
+      }
+    },
+    {
+      "id": "W9-P12",
+      "type": "computational",
+      "topic": "R Implementation",
+      "difficulty": "intermediate",
+      "question": "Write R functions for: (a) Market equilibrium solver. (b) Surplus calculator. (c) Tax analysis. Test with a=100, b=2, c=-20, d=3, t=5.",
+      "solution": {
+        "r_code": [
+          "# (a) Equilibrium solver",
+          "market_equilibrium <- function(a, b, c, d) {",
+          "  # Demand: Q = a - bp, Supply: Q = c + dp",
+          "  p_star <- (a - c) / (b + d)",
+          "  Q_star <- a - b * p_star",
+          "  list(price = p_star, quantity = Q_star)",
+          "}",
+          "",
+          "# (b) Surplus calculator",
+          "calc_surplus <- function(a, b, c, d) {",
+          "  eq <- market_equilibrium(a, b, c, d)",
+          "  P_max <- a / b  # demand intercept",
+          "  P_min <- -c / d  # supply intercept",
+          "  CS <- 0.5 * (P_max - eq$price) * eq$quantity",
+          "  PS <- 0.5 * (eq$price - P_min) * eq$quantity",
+          "  list(CS = CS, PS = PS, total = CS + PS)",
+          "}",
+          "",
+          "# (c) Tax analysis",
+          "tax_analysis <- function(a, b, c, d, t) {",
+          "  # Original",
+          "  orig <- market_equilibrium(a, b, c, d)",
+          "  # With tax: supply shifts up by t",
+          "  p_buyer <- (a - c + d*t) / (b + d)",
+          "  p_seller <- p_buyer - t",
+          "  Q_tax <- a - b * p_buyer",
+          "  revenue <- t * Q_tax",
+          "  DWL <- 0.5 * t * (orig$quantity - Q_tax)",
+          "  list(p_b = p_buyer, p_s = p_seller, Q = Q_tax,",
+          "       revenue = revenue, DWL = DWL)",
+          "}",
+          "",
+          "# Test",
+          "eq <- market_equilibrium(100, 2, -20, 3)",
+          "cat('Equilibrium: p =', eq$price, ', Q =', eq$quantity)"
+        ],
+        "test_results": {
+          "equilibrium": "p* = (100 - (-20))/(2 + 3) = 120/5 = 24, Q* = 100 - 2(24) = 52",
+          "with_tax": "p_b = (100 + 20 + 15)/5 = 27, p_s = 22, Q = 46, Revenue = 230, DWL = 15"
+        }
+      }
+    }
+  ],
+  "ai_tutor_guidance": {
+    "common_errors": [
+      "Forgetting to check if price floor/ceiling is binding",
+      "Confusing tax incidence (who legally pays vs who bears burden)",
+      "Using wrong sign when aggregating (horizontal not vertical)",
+      "Forgetting shutdown condition in supply aggregation",
+      "Computing LR equilibrium without verifying zero profit"
+    ],
+    "socratic_prompts": [
+      "What happens to surplus if we trade one more unit beyond Q*?",
+      "Why does tax burden not depend on who legally pays the tax?",
+      "What signal tells firms to enter or exit an industry?",
+      "Why is the competitive equilibrium called 'efficient'?"
+    ],
+    "extension_questions": [
+      "How would the analysis change with a quota instead of a tax?",
+      "What if there are externalities in production?",
+      "How does international trade affect domestic equilibrium?"
+    ]
+  }
+}
