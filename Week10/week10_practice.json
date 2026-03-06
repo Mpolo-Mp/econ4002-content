@@ -1,517 +1,136 @@
 {
-  "week": 10,
-  "title": "International Trade and Policy",
-  "learning_objectives": [
-    "Explain comparative advantage and gains from trade",
-    "Derive excess demand and supply functions",
-    "Analyze free trade vs autarky welfare effects",
-    "Calculate tariff impacts on prices and welfare",
-    "Compare tariffs, quotas, and subsidies",
-    "Understand large country trade effects"
-  ],
-  "problems": [
+  "metadata": {
+    "week": 10,
+    "title": "International Trade and Policy",
+    "learning_objectives": [
+      "Explain comparative advantage and gains from trade",
+      "Derive excess demand and supply functions",
+      "Analyze free trade vs autarky welfare effects",
+      "Calculate tariff impacts on prices and welfare",
+      "Compare tariffs, quotas, and subsidies",
+      "Understand large country trade effects"
+    ]
+  },
+  "questions": [
     {
       "id": "W10-P1",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Comparative Advantage",
-      "difficulty": "basic",
       "question": "Vietnam: 5 hrs/rice, 10 hrs/textile. Japan: 2 hrs/rice, 3 hrs/textile. Find absolute and comparative advantages.",
       "hints": [
         "Absolute advantage: fewer resources to produce",
         "Comparative advantage: lower opportunity cost"
       ],
-      "solution": {
-        "a": {
-          "absolute_rice": "Japan (2 < 5 hours)",
-          "absolute_textiles": "Japan (3 < 10 hours)",
-          "conclusion": "Japan has absolute advantage in BOTH goods"
-        },
-        "b": {
-          "Vietnam": "OC(rice) = 5/10 = 0.5 textiles per rice",
-          "Japan": "OC(rice) = 2/3 ≈ 0.67 textiles per rice"
-        },
-        "c": {
-          "Vietnam": "OC(textile) = 10/5 = 2 rice per textile",
-          "Japan": "OC(textile) = 3/2 = 1.5 rice per textile"
-        },
-        "d": {
-          "comp_adv_rice": "Vietnam (0.5 < 0.67)",
-          "comp_adv_textiles": "Japan (1.5 < 2)"
-        },
-        "e": {
-          "Vietnam_exports": "Rice (comparative advantage)",
-          "Japan_exports": "Textiles (comparative advantage)"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W10-P2",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Terms of Trade",
-      "difficulty": "basic",
       "question": "Using Problem 1 countries, find mutually beneficial ToT for textiles.",
-      "solution": {
-        "a": {
-          "Vietnam_min": "Vietnam won't give textile for less than 2 rice (its OC)",
-          "Japan_max": "Japan won't pay more than 1.5 rice for textile (its OC)",
-          "problem": "No mutually beneficial trade! Japan values textiles at 1.5 rice but Vietnam requires 2 rice",
-          "correction": "Re-examining: Vietnam exports RICE, Japan exports TEXTILES",
-          "correct_range": "ToT for rice: between 0.5 and 0.67 textiles per rice",
-          "or_equivalently": "ToT for textiles: between 1.5 and 2 rice per textile"
-        },
-        "b": {
-          "at_4_rice_per_textile": "This is outside the viable range (1.5 to 2)",
-          "interpretation": "Would not occur as Japan wouldn't pay 4 rice when OC is only 1.5"
-        },
-        "c": {
-          "transport_costs": "Narrow the viable range",
-          "effect": "If transport costs = 0.3 rice equivalent per textile, range becomes 1.8 to 1.7 (may eliminate trade)"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P3",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Autarky vs Free Trade",
-      "difficulty": "intermediate",
       "question": "Qᴰ = 120 - 2p, Qˢ = 3p - 30, pʷ = 24. Find autarky eq, trade direction, and welfare changes.",
       "hints": [
         "Autarky: set Qᴰ = Qˢ",
         "If pʷ < pᴬ, country imports"
       ],
-      "solution": {
-        "a": {
-          "equilibrium": "120 - 2p = 3p - 30",
-          "solve": "150 = 5p → pᴬ = 30",
-          "quantity": "Qᴬ = 120 - 60 = 60"
-        },
-        "b": {
-          "comparison": "pʷ = 24 < pᴬ = 30",
-          "direction": "Country IMPORTS (world price is lower)",
-          "Qᴰ_trade": "120 - 2(24) = 72",
-          "Qˢ_trade": "3(24) - 30 = 42",
-          "imports": "M = 72 - 42 = 30"
-        },
-        "c": {
-          "CS_autarky": "½ × (60 - 30) × 60 = 900",
-          "CS_free_trade": "½ × (60 - 24) × 72 = 1296",
-          "note": "Demand intercept: p = 60 when Q = 0"
-        },
-        "d": {
-          "PS_autarky": "½ × (30 - 10) × 60 = 600",
-          "PS_free_trade": "½ × (24 - 10) × 42 = 294",
-          "note": "Supply intercept: p = 10 when Q = 0"
-        },
-        "e": {
-          "delta_CS": "1296 - 900 = +396",
-          "delta_PS": "294 - 600 = -306",
-          "net_gain": "396 - 306 = 90",
-          "interpretation": "Free trade increases total welfare by 90"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W10-P4",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Tariff Analysis - Small Country",
-      "difficulty": "intermediate",
       "question": "Same market (Qᴰ=120-2p, Qˢ=3p-30, pʷ=24), tariff t=6. Full welfare analysis.",
       "hints": [
         "Domestic price = pʷ + t",
         "DWL = production distortion + consumption distortion"
       ],
-      "solution": {
-        "a": {
-          "domestic_price": "p = pʷ + t = 24 + 6 = 30"
-        },
-        "b": {
-          "Qᴰ_tariff": "120 - 2(30) = 60",
-          "Qˢ_tariff": "3(30) - 30 = 60"
-        },
-        "c": {
-          "imports_free_trade": "30",
-          "imports_tariff": "60 - 60 = 0",
-          "reduction": "Imports eliminated entirely (prohibitive tariff)"
-        },
-        "d": {
-          "tariff_revenue": "T = t × M = 6 × 0 = 0",
-          "note": "No revenue because no imports!"
-        },
-        "e": {
-          "DWL_production": "½ × 6 × (60 - 42) = ½ × 6 × 18 = 54",
-          "DWL_consumption": "½ × 6 × (72 - 60) = ½ × 6 × 12 = 36",
-          "total_DWL": "54 + 36 = 90"
-        },
-        "f": {
-          "delta_CS": "-(E + F + g + h) where p rises 24→30, Q falls 72→60",
-          "CS_calculation": "1296 - 900 = -396 (loss)",
-          "delta_PS": "+E where p rises 24→30, Q rises 42→60",
-          "PS_calculation": "600 - 294 = +306 (gain)",
-          "gov_revenue": "0",
-          "net_welfare": "-396 + 306 + 0 = -90 (loss = DWL)"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W10-P5",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Import Quota",
-      "difficulty": "intermediate",
       "question": "Same market, import quota M̄ = 12. Find price, quantities, and quota rent.",
-      "solution": {
-        "a": {
-          "quota_condition": "D(pᑫ) - S(pᑫ) = 12",
-          "equation": "(120 - 2pᑫ) - (3pᑫ - 30) = 12",
-          "solve": "150 - 5pᑫ = 12 → pᑫ = 27.6"
-        },
-        "b": {
-          "Qᴰ": "120 - 2(27.6) = 64.8",
-          "Qˢ": "3(27.6) - 30 = 52.8",
-          "verify": "64.8 - 52.8 = 12 ✓"
-        },
-        "c": {
-          "quota_rent": "(pᑫ - pʷ) × M̄ = (27.6 - 24) × 12 = 43.2",
-          "i_auctioned": "Government captures 43.2",
-          "ii_domestic": "Domestic importers capture 43.2",
-          "iii_VER": "Foreign exporters capture 43.2 (worst for domestic welfare)"
-        },
-        "d": {
-          "equivalent_tariff": "t = pᑫ - pʷ = 27.6 - 24 = 3.6",
-          "tariff_welfare": "DWL only (rent = government revenue)",
-          "quota_welfare_auctioned": "Same as tariff if auctioned",
-          "quota_welfare_VER": "DWL + rent transfer abroad = larger loss"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P6",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Export Country Analysis",
-      "difficulty": "intermediate",
       "question": "Qᴰ = 80-p, Qˢ = 2p-10, pʷ = 40. Analyze export tax (t=9) and subsidy (s=6).",
-      "solution": {
-        "a": {
-          "autarky": "80 - p = 2p - 10 → 90 = 3p → pᴬ = 30",
-          "Qᴬ": "80 - 30 = 50"
-        },
-        "b": {
-          "comparison": "pʷ = 40 > pᴬ = 30 → country EXPORTS",
-          "Qᴰ_free": "80 - 40 = 40",
-          "Qˢ_free": "2(40) - 10 = 70",
-          "exports": "X = 70 - 40 = 30"
-        },
-        "c": {
-          "export_tax": "Domestic price = pʷ - t = 40 - 9 = 31",
-          "Qᴰ_tax": "80 - 31 = 49",
-          "Qˢ_tax": "2(31) - 10 = 52",
-          "exports_tax": "52 - 49 = 3",
-          "welfare": {
-            "delta_CS": "Gain (lower domestic price)",
-            "delta_PS": "Loss (lower received price)",
-            "gov_revenue": "9 × 3 = 27",
-            "net": "DWL from reduced trade"
-          }
-        },
-        "d": {
-          "export_subsidy": "Domestic price = pʷ + s = 40 + 6 = 46",
-          "Qᴰ_sub": "80 - 46 = 34",
-          "Qˢ_sub": "2(46) - 10 = 82",
-          "exports_sub": "82 - 34 = 48",
-          "welfare": {
-            "delta_CS": "Loss (higher domestic price)",
-            "delta_PS": "Gain (higher price for producers)",
-            "gov_cost": "6 × 48 = 288",
-            "net": "Large DWL from over-production"
-          }
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P7",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Large Country Tariff",
-      "difficulty": "advanced",
       "question": "Qᴰ = 200-4p, Qˢ = 2p-40, foreign export supply X* = 4pʷ-80. Analyze tariff t=10.",
       "hints": [
         "Large country: domestic price ≠ world price + t",
         "Equilibrium: domestic imports = foreign exports"
       ],
-      "solution": {
-        "a": {
-          "free_trade_condition": "D(p) - S(p) = X*(pʷ) with p = pʷ",
-          "imports": "(200 - 4p) - (2p - 40) = 240 - 6p",
-          "foreign_supply": "4p - 80",
-          "equilibrium": "240 - 6p = 4p - 80 → 320 = 10p → p* = 32",
-          "free_trade_results": {
-            "domestic_price": "32",
-            "world_price": "32",
-            "Qᴰ": "200 - 128 = 72",
-            "Qˢ": "64 - 40 = 24",
-            "imports": "72 - 24 = 48"
-          }
-        },
-        "b": {
-          "tariff_condition": "p_d = pʷ + t = pʷ + 10",
-          "new_equilibrium": {
-            "domestic_imports": "240 - 6p_d = 240 - 6(pʷ + 10) = 180 - 6pʷ",
-            "foreign_exports": "4pʷ - 80",
-            "equilibrium": "180 - 6pʷ = 4pʷ - 80 → 260 = 10pʷ → pʷ' = 26"
-          },
-          "new_prices": {
-            "world_price": "26 (down from 32)",
-            "domestic_price": "26 + 10 = 36 (up from 32)"
-          },
-          "new_quantities": {
-            "Qᴰ": "200 - 144 = 56",
-            "Qˢ": "72 - 40 = 32",
-            "imports": "56 - 32 = 24"
-          }
-        },
-        "c": {
-          "tariff_burden": {
-            "consumers_pay": "p_d - p* = 36 - 32 = 4",
-            "foreigners_absorb": "p* - pʷ' = 32 - 26 = 6",
-            "total_tariff": "4 + 6 = 10 ✓"
-          },
-          "share": "Consumers bear 40%, foreign suppliers bear 60%"
-        },
-        "d": {
-          "ToT_gain": "(p* - pʷ') × M_new = 6 × 24 = 144",
-          "interpretation": "Country extracts 144 from foreign suppliers"
-        },
-        "e": {
-          "DWL": "Still exists from quantity distortion",
-          "production_DWL": "½ × 4 × (32-24) = 16",
-          "consumption_DWL": "½ × 4 × (72-56) = 32",
-          "total_DWL": "48",
-          "ToT_gain": "144",
-          "net_welfare": "144 - 48 = +96 (welfare GAIN for large country!)"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W10-P8",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Optimal Tariff",
-      "difficulty": "advanced",
       "question": "For the large country in W10-P7, find the optimal tariff.",
-      "solution": {
-        "a": {
-          "formula": "t* = 1/(εₛ - 1)",
-          "where": "εₛ = elasticity of foreign export supply"
-        },
-        "b": {
-          "X_star": "X* = 4pʷ - 80",
-          "dX_dp": "dX*/dpʷ = 4",
-          "at_free_trade": "X* = 48, pʷ = 32",
-          "elasticity": "εₛ = (dX*/dpʷ) × (pʷ/X*) = 4 × (32/48) = 8/3 ≈ 2.67"
-        },
-        "c": {
-          "optimal_tariff": "t* = 1/(2.67 - 1) = 1/1.67 = 0.6",
-          "interpretation": "Optimal tariff ≈ 60% of world price",
-          "note": "This is the ad valorem equivalent; specific t* = 0.6 × 32 ≈ 19.2"
-        },
-        "d": {
-          "reasons_not_to": [
-            "Retaliation from trading partners",
-            "WTO rules prohibit discriminatory tariffs",
-            "Long-run reputation effects",
-            "Political/diplomatic costs",
-            "Uncertainty about true elasticities"
-          ]
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P9",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Australian Beef Market",
-      "difficulty": "advanced",
       "question": "Australian beef: Qᴰ = 1200-10p, Qˢ = 5p+200, export demand Qᵉˣᵖ = 800-5pʷ. Analyze Japanese tariff.",
-      "solution": {
-        "a": {
-          "autarky": "1200 - 10p = 5p + 200 → 1000 = 15p → pᴬ = 66.67",
-          "Qᴬ": "1200 - 666.7 = 533.3 thousand tonnes"
-        },
-        "b": {
-          "at_pʷ_50": {
-            "Qᴰ": "1200 - 500 = 700",
-            "Qˢ": "250 + 200 = 450",
-            "excess_supply": "450 - 700 = -250 (would import!)"
-          },
-          "recalculation": {
-            "note": "At p=50, Australia would import. Let's find export price",
-            "export_equilibrium": "Qˢ - Qᴰ = Qᵉˣᵖ",
-            "equation": "(5p + 200) - (1200 - 10p) = 800 - 5p",
-            "simplify": "15p - 1000 = 800 - 5p → 20p = 1800 → p = 90"
-          },
-          "correct_answer": {
-            "price": "p = 90",
-            "Qᴰ": "1200 - 900 = 300",
-            "Qˢ": "450 + 200 = 650",
-            "exports": "650 - 300 = 350"
-          }
-        },
-        "c": {
-          "japanese_tariff": "Reduces export demand",
-          "new_export_demand": "Qᵉˣᵖ = 800 - 5(pʷ + 15) = 725 - 5pʷ",
-          "effect": "Lower world/Australian price, reduced exports"
-        },
-        "d": {
-          "welfare_loss": "Australian PS falls, CS rises (lower domestic price)",
-          "net_effect": "Net loss to Australia (exporter hurt by importer's tariff)"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P10",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Policy Comparison",
-      "difficulty": "intermediate",
       "question": "Compare tariff, quota, and production subsidy for reducing imports by 50%.",
-      "solution": {
-        "a": {
-          "tariff": "Raises domestic price → reduces consumption, increases production",
-          "quota": "Directly limits imports → price rises to clear market",
-          "subsidy": "Lowers producer costs → increases domestic production, imports fall"
-        },
-        "b": {
-          "tariff": "Consumers (higher prices), some offset by government revenue",
-          "quota": "Consumers (higher prices), plus quota rent transfer",
-          "subsidy": "Taxpayers (fund the subsidy)"
-        },
-        "c": {
-          "ranking": "Production subsidy < Tariff ≤ Quota (with rent abroad)",
-          "explanation": {
-            "subsidy": "Only distorts production, not consumption",
-            "tariff": "Distorts both production and consumption",
-            "quota": "Same distortions as tariff, plus possible rent transfer"
-          }
-        },
-        "d": {
-          "producers_prefer": "Tariff or quota",
-          "reason": "Higher output prices directly benefit producers",
-          "not_subsidy": "Subsidy also helps but doesn't raise market price, and depends on government budget"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P11",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Excess Demand Function",
-      "difficulty": "intermediate",
       "question": "Qᴰ = a - bp, Qˢ = c + dp. Derive excess demand ED(p).",
-      "solution": {
-        "a": {
-          "ED": "ED(p) = D(p) - S(p) = (a - bp) - (c + dp) = (a - c) - (b + d)p"
-        },
-        "b": {
-          "ES": "ES(p) = S(p) - D(p) = -ED(p) = (c - a) + (b + d)p"
-        },
-        "c": {
-          "ED_zero": "0 = (a - c) - (b + d)p → p = (a - c)/(b + d) = pᴬ",
-          "interpretation": "Excess demand is zero at autarky price"
-        },
-        "d": {
-          "graph": {
-            "vertical_intercept": "ED = a - c when p = 0",
-            "horizontal_intercept": "p = (a-c)/(b+d) = pᴬ",
-            "slope": "-(b + d) < 0 (downward sloping)",
-            "regions": {
-              "p_lt_pA": "ED > 0: country would import",
-              "p_gt_pA": "ED < 0: country would export"
-            }
-          }
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W10-P12",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "R Implementation",
-      "difficulty": "intermediate",
       "question": "Write R functions for trade analysis. Test with Qᴰ=100-2p, Qˢ=p-20, pʷ=30, t=10.",
-      "solution": {
-        "r_code": [
-          "# (a) Autarky and free trade analysis",
-          "trade_analysis <- function(a, b, c, d, p_w) {",
-          "  p_A <- (a - c) / (b + d)",
-          "  Q_A <- a - b * p_A",
-          "  ",
-          "  Q_D_trade <- a - b * p_w",
-          "  Q_S_trade <- c + d * p_w",
-          "  M <- Q_D_trade - Q_S_trade",
-          "  ",
-          "  list(p_autarky = p_A, Q_autarky = Q_A,",
-          "       Q_D = Q_D_trade, Q_S = Q_S_trade,",
-          "       imports = M, direction = ifelse(M > 0, 'Import', 'Export'))",
-          "}",
-          "",
-          "# (b) Tariff welfare analysis",
-          "tariff_welfare <- function(a, b, c, d, p_w, t) {",
-          "  free <- trade_analysis(a, b, c, d, p_w)",
-          "  p_t <- p_w + t",
-          "  ",
-          "  Q_D_t <- a - b * p_t",
-          "  Q_S_t <- c + d * p_t",
-          "  M_t <- max(0, Q_D_t - Q_S_t)",
-          "  ",
-          "  P_d_int <- a / b",
-          "  P_s_int <- -c / d",
-          "  ",
-          "  CS_free <- 0.5 * (P_d_int - p_w) * free$Q_D",
-          "  CS_tariff <- 0.5 * (P_d_int - p_t) * Q_D_t",
-          "  ",
-          "  PS_free <- 0.5 * (p_w - P_s_int) * free$Q_S",
-          "  PS_tariff <- 0.5 * (p_t - P_s_int) * Q_S_t",
-          "  ",
-          "  revenue <- t * M_t",
-          "  DWL <- (CS_free - CS_tariff) - (PS_tariff - PS_free) - revenue",
-          "  ",
-          "  list(delta_CS = CS_tariff - CS_free,",
-          "       delta_PS = PS_tariff - PS_free,",
-          "       revenue = revenue, DWL = DWL)",
-          "}",
-          "",
-          "# Test",
-          "trade_analysis(100, 2, -20, 1, 30)",
-          "tariff_welfare(100, 2, -20, 1, 30, 10)"
-        ],
-        "test_results": {
-          "free_trade": {
-            "p_autarky": "(100-(-20))/(2+1) = 40",
-            "Q_D": "100 - 60 = 40",
-            "Q_S": "30 - 20 = 10",
-            "imports": "40 - 10 = 30"
-          },
-          "with_tariff": {
-            "p_domestic": "40",
-            "Q_D": "100 - 80 = 20",
-            "Q_S": "40 - 20 = 20",
-            "imports": "0 (prohibitive tariff!)"
-          }
-        }
-      }
+      "hints": [],
+      "solution": ""
     }
-  ],
-  "ai_tutor_guidance": {
-    "common_errors": [
-      "Confusing absolute and comparative advantage",
-      "Wrong trade direction (importing when should be exporting)",
-      "Forgetting that small country cannot affect world price",
-      "Missing quota rent in welfare calculations",
-      "Not accounting for who receives quota rent"
-    ],
-    "socratic_prompts": [
-      "Why can a country with no absolute advantages still gain from trade?",
-      "Who gains and who loses when a tariff is imposed?",
-      "Why might a government choose a quota over a tariff?",
-      "How does the large country case differ from the small country case?"
-    ],
-    "extension_questions": [
-      "How do exchange rates affect trade analysis?",
-      "What about non-tariff barriers like regulations?",
-      "How does trade affect income distribution within a country?"
-    ]
-  }
+  ]
 }

@@ -1,21 +1,23 @@
 {
-  "week": 4,
-  "title": "Optimization: Unconstrained and Constrained",
-  "learning_objectives": [
-    "Formulate economic optimization problems",
-    "Derive and solve first-order conditions (FOC)",
-    "Verify second-order conditions (SOC) using Hessian",
-    "Apply the Lagrangian method to constrained problems",
-    "Evaluate bordered Hessian for constrained SOC",
-    "Interpret Lagrange multipliers as shadow prices",
-    "Implement optimization in R"
-  ],
-  "problems": [
+  "metadata": {
+    "week": 4,
+    "title": "Optimization: Unconstrained and Constrained",
+    "learning_objectives": [
+      "Formulate economic optimization problems",
+      "Derive and solve first-order conditions (FOC)",
+      "Verify second-order conditions (SOC) using Hessian",
+      "Apply the Lagrangian method to constrained problems",
+      "Evaluate bordered Hessian for constrained SOC",
+      "Interpret Lagrange multipliers as shadow prices",
+      "Implement optimization in R"
+    ]
+  },
+  "questions": [
     {
       "id": "W4-P1",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Single Variable Optimization",
-      "difficulty": "basic",
       "question": "A firm faces demand P = 120 - 2Q and has cost function C(Q) = 20Q + Q². Find the profit-maximizing quantity, price, and maximum profit. Verify with SOC.",
       "hints": [
         "Profit = Total Revenue - Total Cost",
@@ -23,38 +25,13 @@
         "Set dπ/dQ = 0 for FOC",
         "Check d²π/dQ² < 0 for maximum"
       ],
-      "solution": {
-        "profit_function": "π(Q) = (120 - 2Q)Q - (20Q + Q²) = 120Q - 2Q² - 20Q - Q² = 100Q - 3Q²",
-        "FOC": {
-          "derivative": "dπ/dQ = 100 - 6Q = 0",
-          "solution": "Q* = 100/6 = 16.67"
-        },
-        "SOC": {
-          "second_derivative": "d²π/dQ² = -6 < 0",
-          "conclusion": "Maximum confirmed ✓"
-        },
-        "optimal_values": {
-          "Q_star": 16.67,
-          "P_star": "120 - 2(16.67) = 86.67",
-          "profit_star": "100(16.67) - 3(16.67)² = 1666.67 - 833.33 = 833.33"
-        },
-        "r_code": [
-          "profit <- function(Q) 100*Q - 3*Q^2",
-          "result <- optimize(profit, c(0, 50), maximum = TRUE)",
-          "cat('Q* =', result$maximum, ', π* =', result$objective)"
-        ]
-      },
-      "rubric": {
-        "full_credit": "Correct π function, FOC, SOC verification, all optimal values",
-        "partial_credit": "FOC correct but SOC missing or minor calculation error",
-        "no_credit": "Incorrect setup or fundamental errors"
-      }
+      "solution": ""
     },
     {
       "id": "W4-P2",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Unconstrained Multi-Variable",
-      "difficulty": "intermediate",
       "question": "A farm produces output using labor (L) and fertilizer (F) with production function Q = 10L^0.5 F^0.3. Output price is $5, wage is $2, fertilizer price is $1. Find profit-maximizing input levels.",
       "hints": [
         "π = pQ - wL - pF·F",
@@ -62,145 +39,52 @@
         "Set both FOCs equal to zero",
         "Solve the system of equations"
       ],
-      "solution": {
-        "profit_function": "π(L,F) = 5(10L^0.5 F^0.3) - 2L - F = 50L^0.5 F^0.3 - 2L - F",
-        "FOC": {
-          "partial_L": "∂π/∂L = 25L^(-0.5)F^0.3 - 2 = 0 → L^(-0.5)F^0.3 = 0.08",
-          "partial_F": "∂π/∂F = 15L^0.5 F^(-0.7) - 1 = 0 → L^0.5 F^(-0.7) = 1/15"
-        },
-        "solving": {
-          "step1": "From FOC_L: F^0.3 = 0.08L^0.5",
-          "step2": "From FOC_F: F^0.7 = 15L^0.5",
-          "step3": "Divide: F^0.3/F^0.7 = 0.08/15 → F^(-0.4) = 0.00533",
-          "step4": "F* = (0.00533)^(-2.5) = 843.75",
-          "step5": "L* = (F^0.3/0.08)² = 234.38"
-        },
-        "optimal_values": {
-          "L_star": 234.38,
-          "F_star": 843.75,
-          "Q_star": "10(234.38)^0.5(843.75)^0.3 ≈ 140.6",
-          "profit_star": "5(140.6) - 2(234.38) - 843.75 ≈ -390.7"
-        },
-        "note": "Negative profit suggests boundary solution may be optimal; check if zero production is better."
-      }
+      "solution": ""
     },
     {
       "id": "W4-P3",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Hessian and Definiteness",
-      "difficulty": "intermediate",
       "question": "For f(x,y) = -2x² - 3y² + 4xy - 8x + 6y, find the critical point and classify it using the Hessian.",
       "hints": [
         "Set ∇f = 0 to find critical point",
         "Construct 2×2 Hessian matrix",
         "Check eigenvalues or use leading principal minors"
       ],
-      "solution": {
-        "FOC": {
-          "partial_x": "∂f/∂x = -4x + 4y - 8 = 0",
-          "partial_y": "∂f/∂y = -6y + 4x + 6 = 0"
-        },
-        "solving": {
-          "system": "[-4x + 4y = 8, 4x - 6y = -6]",
-          "add_equations": "-2y = 2 → y = -1",
-          "substitute": "-4x + 4(-1) = 8 → x = -3",
-          "critical_point": "(x*, y*) = (-3, -1)"
-        },
-        "hessian": {
-          "matrix": "[[-4, 4], [4, -6]]",
-          "H_11": -4,
-          "determinant": "(-4)(-6) - (4)(4) = 24 - 16 = 8"
-        },
-        "classification": {
-          "test": "H_11 = -4 < 0 and det(H) = 8 > 0",
-          "conclusion": "Negative definite → LOCAL MAXIMUM",
-          "value_at_max": "f(-3, -1) = -2(9) - 3(1) + 4(-3)(-1) - 8(-3) + 6(-1) = -18 - 3 + 12 + 24 - 6 = 9"
-        },
-        "r_code": [
-          "f <- function(x) -2*x[1]^2 - 3*x[2]^2 + 4*x[1]*x[2] - 8*x[1] + 6*x[2]",
-          "result <- optim(c(0,0), function(x) -f(x), method='BFGS')",
-          "cat('Critical point:', result$par, ', Value:', -result$value)"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W4-P4",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Constrained Optimization - Lagrangian",
-      "difficulty": "intermediate",
       "question": "A consumer maximizes utility u(x,y) = xy subject to budget constraint 4x + 2y = 100. Use the Lagrangian method to find optimal consumption.",
       "hints": [
         "Set up Lagrangian: L = xy + λ(100 - 4x - 2y)",
         "Take partial derivatives w.r.t. x, y, λ",
         "Solve the system of 3 equations"
       ],
-      "solution": {
-        "lagrangian": "L = xy + λ(100 - 4x - 2y)",
-        "FOC": {
-          "partial_x": "∂L/∂x = y - 4λ = 0 → y = 4λ",
-          "partial_y": "∂L/∂y = x - 2λ = 0 → x = 2λ",
-          "partial_lambda": "∂L/∂λ = 100 - 4x - 2y = 0"
-        },
-        "solving": {
-          "ratio": "From FOCs: y/x = 4λ/2λ = 2, so y = 2x",
-          "substitute": "100 - 4x - 2(2x) = 0 → 100 = 8x → x* = 12.5",
-          "y_star": "y* = 2(12.5) = 25"
-        },
-        "optimal_values": {
-          "x_star": 12.5,
-          "y_star": 25,
-          "utility_star": "12.5 × 25 = 312.5",
-          "lambda_star": "From y = 4λ: λ* = 25/4 = 6.25"
-        },
-        "interpretation": "λ* = 6.25 means an extra dollar of income increases utility by 6.25 units"
-      },
-      "rubric": {
-        "full_credit": "Correct Lagrangian, all FOCs, solution, λ interpretation",
-        "partial_credit": "Correct setup but calculation error or missing interpretation",
-        "no_credit": "Incorrect Lagrangian or fundamental conceptual error"
-      }
+      "solution": ""
     },
     {
       "id": "W4-P5",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Cost Minimization",
-      "difficulty": "intermediate",
       "question": "A firm minimizes cost C = wL + rK subject to production constraint Q̄ = AL^α K^β. Derive the conditional input demands L*(w,r,Q̄) and K*(w,r,Q̄) for general Cobb-Douglas. Then calculate for A=1, α=0.5, β=0.5, w=4, r=9, Q̄=100.",
       "hints": [
         "Lagrangian: L = wL + rK + λ(Q̄ - AL^α K^β)",
         "FOC ratio gives K/L relationship",
         "Substitute into constraint to solve"
       ],
-      "solution": {
-        "lagrangian": "L = wL + rK + λ(Q̄ - AL^α K^β)",
-        "FOC": {
-          "partial_L": "w - λαAL^(α-1)K^β = 0",
-          "partial_K": "r - λβAL^α K^(β-1) = 0",
-          "constraint": "Q̄ = AL^α K^β"
-        },
-        "ratio": {
-          "derivation": "Divide FOC_L by FOC_K: w/r = (αK)/(βL)",
-          "result": "K/L = (βw)/(αr)"
-        },
-        "general_solution": {
-          "K_demand": "K* = Q̄^(1/(α+β)) · (βw/(αr))^(α/(α+β)) · A^(-1/(α+β))",
-          "L_demand": "L* = Q̄^(1/(α+β)) · (αr/(βw))^(β/(α+β)) · A^(-1/(α+β))"
-        },
-        "numerical_example": {
-          "parameters": "A=1, α=0.5, β=0.5, w=4, r=9, Q̄=100",
-          "K_L_ratio": "K/L = (0.5×4)/(0.5×9) = 4/9",
-          "from_constraint": "100 = L^0.5 K^0.5 = L^0.5 (4L/9)^0.5 = L × (4/9)^0.5 = L × 0.667",
-          "L_star": "L* = 100/0.667 = 150",
-          "K_star": "K* = (4/9) × 150 = 66.67",
-          "min_cost": "C* = 4(150) + 9(66.67) = 600 + 600 = 1200"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W4-P6",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Bordered Hessian SOC",
-      "difficulty": "advanced",
       "question": "For the utility maximization problem max u(x,y) = x^0.5 y^0.5 subject to 2x + y = 60, verify the SOC using the bordered Hessian at the optimal point.",
       "hints": [
         "First solve for optimal (x*, y*)",
@@ -208,39 +92,13 @@
         "Compute Lagrangian second derivatives",
         "Construct and evaluate bordered Hessian determinant"
       ],
-      "solution": {
-        "optimal_solution": {
-          "from_cobb_douglas": "x* = (0.5)(60)/2 = 15, y* = (0.5)(60)/1 = 30",
-          "lambda_star": "From ∂L/∂x = 0: 0.5x^(-0.5)y^0.5 = 2λ → λ* = 0.5(15)^(-0.5)(30)^0.5/2 = 0.177"
-        },
-        "constraint_gradients": {
-          "g_x": 2,
-          "g_y": 1
-        },
-        "lagrangian_second_derivatives": {
-          "L_xx": "-0.25x^(-1.5)y^0.5 = -0.25(15)^(-1.5)(30)^0.5 = -0.0236",
-          "L_yy": "-0.25x^0.5 y^(-1.5) = -0.25(15)^0.5(30)^(-1.5) = -0.0059",
-          "L_xy": "0.25x^(-0.5)y^(-0.5) = 0.25(15)^(-0.5)(30)^(-0.5) = 0.0118"
-        },
-        "bordered_hessian": {
-          "matrix": "[[0, 2, 1], [2, -0.0236, 0.0118], [1, 0.0118, -0.0059]]",
-          "determinant_calculation": [
-            "|H̄| = 0·|H_22| - 2·|H_12| + 1·|H_13|",
-            "= -2(2×(-0.0059) - 0.0118×1) + 1(2×0.0118 - (-0.0236)×1)",
-            "= -2(-0.0118 - 0.0118) + 1(0.0236 + 0.0236)",
-            "= -2(-0.0236) + 0.0472",
-            "= 0.0472 + 0.0472 = 0.0944"
-          ],
-          "determinant": 0.0944
-        },
-        "conclusion": "|H̄| = 0.0944 > 0, confirming MAXIMUM for constrained problem ✓"
-      }
+      "solution": ""
     },
     {
       "id": "W4-P7",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Shadow Price Interpretation",
-      "difficulty": "intermediate",
       "question": "A farmer maximizes profit π = 50x + 80y from two crops subject to land constraint x + y ≤ 100 and water constraint 2x + 3y ≤ 240. Find optimal allocation and interpret the shadow prices.",
       "hints": [
         "This is a linear programming problem",
@@ -248,243 +106,68 @@
         "Lagrangian approach with inequality → complementary slackness",
         "Shadow price = λ = marginal value of relaxing constraint"
       ],
-      "solution": {
-        "feasible_region": {
-          "corners": ["(0,0)", "(100,0)", "(60,40)", "(0,80)"],
-          "evaluation": {
-            "(0,0)": "π = 0",
-            "(100,0)": "π = 5000",
-            "(60,40)": "π = 50(60) + 80(40) = 3000 + 3200 = 6200",
-            "(0,80)": "π = 6400"
-          }
-        },
-        "optimal": {
-          "allocation": "(x*, y*) = (0, 80)",
-          "profit": "π* = 6400"
-        },
-        "binding_constraints": {
-          "land": "0 + 80 = 80 < 100 (NOT binding, slack = 20)",
-          "water": "2(0) + 3(80) = 240 = 240 (BINDING)"
-        },
-        "shadow_prices": {
-          "lambda_land": "0 (constraint not binding)",
-          "lambda_water": "≈ 26.67 (value of additional water unit)"
-        },
-        "interpretation": "An additional hectare of land has zero marginal value (already have excess). An additional unit of water would increase profit by about $26.67.",
-        "r_code": [
-          "library(lpSolve)",
-          "f.obj <- c(50, 80)",
-          "f.con <- matrix(c(1,1, 2,3), nrow=2, byrow=TRUE)",
-          "f.dir <- c('<=', '<=')",
-          "f.rhs <- c(100, 240)",
-          "lp('max', f.obj, f.con, f.dir, f.rhs, compute.sens=TRUE)"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W4-P8",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Multi-Constraint Lagrangian",
-      "difficulty": "advanced",
       "question": "A diet problem: minimize cost C = 2x + 3y where x = units of Food A, y = units of Food B. Constraints: protein 4x + 2y ≥ 40, calories 3x + 5y ≥ 60. Find optimal diet.",
       "hints": [
         "Reformulate as: min 2x + 3y subject to 40 - 4x - 2y ≤ 0 and 60 - 3x - 5y ≤ 0",
         "With inequality constraints, use KKT conditions",
         "Or solve graphically for this 2-variable case"
       ],
-      "solution": {
-        "graphical_approach": {
-          "constraint_lines": [
-            "Protein: 4x + 2y = 40 → y = 20 - 2x",
-            "Calories: 3x + 5y = 60 → y = 12 - 0.6x"
-          ],
-          "intersection": {
-            "solve": "20 - 2x = 12 - 0.6x → 8 = 1.4x → x = 5.71",
-            "y": "y = 20 - 2(5.71) = 8.57"
-          },
-          "corner_points": {
-            "(10, 0)": "Satisfies protein, check calories: 3(10) + 5(0) = 30 < 60 ✗",
-            "(0, 20)": "Satisfies protein, check calories: 3(0) + 5(20) = 100 ≥ 60 ✓ → C = 60",
-            "(5.71, 8.57)": "Both binding → C = 2(5.71) + 3(8.57) = 37.14",
-            "(0, 12)": "Satisfies calories, check protein: 4(0) + 2(12) = 24 < 40 ✗",
-            "(20, 0)": "Satisfies calories, check protein: 4(20) = 80 ≥ 40 ✓ → C = 40"
-          }
-        },
-        "optimal": {
-          "x_star": 5.71,
-          "y_star": 8.57,
-          "min_cost": 37.14
-        },
-        "kkt_conditions": "Both constraints binding at optimum, so both λ > 0"
-      }
+      "solution": ""
     },
     {
       "id": "W4-P9",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Comparative Statics via Envelope Theorem",
-      "difficulty": "intermediate",
       "question": "For a profit maximization problem π(p,w) = max_L {pf(L) - wL}, use the envelope theorem to show that ∂π*/∂p = Q* (output) and ∂π*/∂w = -L* (negative of optimal labor).",
       "hints": [
         "Envelope theorem: dV*/da = ∂L/∂a evaluated at optimum",
         "V* is value function (optimized objective)",
         "Apply to parameters p and w"
       ],
-      "solution": {
-        "setup": {
-          "objective": "π(L; p, w) = pf(L) - wL",
-          "FOC": "∂π/∂L = pf'(L) - w = 0 → defines L*(p,w)"
-        },
-        "envelope_for_p": {
-          "application": "∂π*/∂p = ∂π(L*,p,w)/∂p = f(L*) = Q*",
-          "interpretation": "Marginal profit from price increase equals output (Hotelling's lemma)"
-        },
-        "envelope_for_w": {
-          "application": "∂π*/∂w = ∂π(L*,p,w)/∂w = -L*",
-          "interpretation": "Marginal profit loss from wage increase equals labor used"
-        },
-        "general_principle": "The envelope theorem allows comparative statics without re-solving the optimization problem"
-      }
+      "solution": ""
     },
     {
       "id": "W4-P10",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "R Implementation",
-      "difficulty": "intermediate",
       "question": "Implement in R: Find minimum of f(x,y) = (x-3)² + (y-2)² + xy subject to x + y = 4. Verify with bordered Hessian.",
       "hints": [
         "Use nloptr or constrOptim",
         "Compute Hessian numerically",
         "Construct bordered Hessian and check determinant sign"
       ],
-      "solution": {
-        "r_code": [
-          "library(nloptr)",
-          "",
-          "# Objective function",
-          "f <- function(x) (x[1]-3)^2 + (x[2]-2)^2 + x[1]*x[2]",
-          "",
-          "# Equality constraint: x + y - 4 = 0",
-          "g_eq <- function(x) x[1] + x[2] - 4",
-          "",
-          "# Solve",
-          "result <- nloptr(",
-          "  x0 = c(2, 2),",
-          "  eval_f = f,",
-          "  eval_g_eq = g_eq,",
-          "  opts = list(algorithm = 'NLOPT_LN_COBYLA', xtol_rel = 1e-8)",
-          ")",
-          "",
-          "x_star <- result$solution",
-          "cat('Optimal (x,y):', x_star, '\\nMin value:', result$objective)",
-          "",
-          "# Hessian of f",
-          "H <- matrix(c(2, 1, 1, 2), nrow = 2)",
-          "",
-          "# Bordered Hessian",
-          "g_grad <- c(1, 1)  # gradient of constraint",
-          "H_bar <- rbind(c(0, g_grad), cbind(g_grad, H))",
-          "cat('\\nBordered Hessian:\\n')",
-          "print(H_bar)",
-          "cat('Determinant:', det(H_bar))",
-          "cat('\\nFor minimization with 1 constraint, need det < 0')"
-        ],
-        "expected_output": {
-          "optimal": "(x*, y*) ≈ (2.33, 1.67)",
-          "min_value": "≈ 3.33",
-          "bordered_hessian_det": -4,
-          "conclusion": "det = -4 < 0 confirms minimum ✓"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W4-P11",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Agricultural Application - Land Allocation",
-      "difficulty": "advanced",
       "question": "A farmer has 200 hectares to allocate between wheat (W) and canola (C). Profit per hectare: πW = 400 - 2W (diminishing due to pest pressure), πC = 350 - C. Total profit = W·πW + C·πC. Maximize total profit subject to W + C = 200.",
       "hints": [
         "Total profit: Π = W(400-2W) + C(350-C)",
         "Substitute C = 200 - W to make unconstrained",
         "Or use Lagrangian approach"
       ],
-      "solution": {
-        "substitution_method": {
-          "substitute": "C = 200 - W",
-          "profit": "Π(W) = W(400-2W) + (200-W)(350-(200-W))",
-          "expand": "= 400W - 2W² + (200-W)(150+W)",
-          "simplify": "= 400W - 2W² + 30000 + 200W - 150W - W²",
-          "final": "= -3W² + 450W + 30000"
-        },
-        "FOC": {
-          "derivative": "dΠ/dW = -6W + 450 = 0",
-          "solution": "W* = 75"
-        },
-        "SOC": {
-          "second": "d²Π/dW² = -6 < 0 ✓ maximum"
-        },
-        "optimal": {
-          "W_star": 75,
-          "C_star": 125,
-          "profit_W": "75(400 - 2×75) = 75(250) = 18750",
-          "profit_C": "125(350 - 125) = 125(225) = 28125",
-          "total_profit": 46875
-        },
-        "lagrangian_verification": {
-          "L": "W(400-2W) + C(350-C) + λ(200-W-C)",
-          "FOC_W": "400 - 4W - λ = 0",
-          "FOC_C": "350 - 2C - λ = 0",
-          "ratio": "From FOCs: 400 - 4W = 350 - 2C → 50 = 4W - 2C",
-          "with_constraint": "W + C = 200 → C = 200 - W",
-          "solve": "50 = 4W - 2(200-W) = 6W - 400 → W = 75 ✓"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W4-P12",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Concavity and Global Optima",
-      "difficulty": "intermediate",
       "question": "Explain why, for a strictly concave objective function, any critical point satisfying the FOC is a global maximum. Provide an economic example.",
-      "solution": {
-        "explanation": {
-          "definition": "A function f is strictly concave if f''(x) < 0 everywhere (single variable) or Hessian is negative definite everywhere (multiple variables)",
-          "implication": "For strictly concave f, the graph has a unique 'peak' - any point where the slope is zero must be the global maximum",
-          "formal": "If f is strictly concave and ∇f(x*) = 0, then for all x ≠ x*: f(x) < f(x*)"
-        },
-        "economic_example": {
-          "context": "Utility function u(x) = ln(x) or u(x) = √x",
-          "property": "These are strictly concave (u'' < 0)",
-          "implication": "Utility maximization with budget constraint has unique solution",
-          "why_matters": "Diminishing marginal utility ensures consumer reaches a well-defined optimum, not a corner or multiple optima"
-        },
-        "contrast": {
-          "non_concave": "If u were convex (increasing MU), consumer would spend all on one good",
-          "linear": "If u were linear, consumer indifferent along budget line"
-        }
-      }
+      "hints": [],
+      "solution": ""
     }
-  ],
-  "ai_tutor_guidance": {
-    "common_errors": [
-      "Forgetting to check SOC after finding FOC",
-      "Wrong sign convention in Lagrangian (adding vs. subtracting λg)",
-      "Confusing bordered Hessian sign conditions for max vs. min",
-      "Not verifying constraint is satisfied at optimum",
-      "Computing regular Hessian instead of bordered Hessian for constrained problems",
-      "Sign errors when computing determinants"
-    ],
-    "socratic_prompts": [
-      "What does setting the derivative equal to zero accomplish?",
-      "Why do we need to check second-order conditions?",
-      "What economic meaning does the Lagrange multiplier have?",
-      "How does the bordered Hessian differ from the regular Hessian?",
-      "Why does concavity guarantee a maximum?"
-    ],
-    "extension_questions": [
-      "How do inequality constraints change the problem (KKT conditions)?",
-      "What if there are multiple constraints?",
-      "How does quasi-concavity relate to constrained optimization?",
-      "What are the computational challenges in high-dimensional optimization?"
-    ]
-  }
+  ]
 }

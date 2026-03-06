@@ -286,11 +286,11 @@ A consumer maximizes $u(x_1, x_2) = x_1^{0.4} x_2^{0.6}$ subject to $2x_1 + 3x_2
 $$\mathcal{L} = x_1^{0.4} x_2^{0.6} + \lambda(120 - 2x_1 - 3x_2)$$
 
 **FOC:**
-$$\frac{\partial \mathcal{L}}{\partial x_1} = 0.4 x_1^{-0.6} x_2^{0.6} - 2\lambda = 0 \tag{1}$$
+$$\frac{\partial \mathcal{L}}{\partial x_1} = 0.4 x_1^{-0.6} x_2^{0.6} - 2\lambda = 0 \quad \cdots (1)$$
 
-$$\frac{\partial \mathcal{L}}{\partial x_2} = 0.6 x_1^{0.4} x_2^{-0.4} - 3\lambda = 0 \tag{2}$$
+$$\frac{\partial \mathcal{L}}{\partial x_2} = 0.6 x_1^{0.4} x_2^{-0.4} - 3\lambda = 0 \quad \cdots (2)$$
 
-$$\frac{\partial \mathcal{L}}{\partial \lambda} = 120 - 2x_1 - 3x_2 = 0 \tag{3}$$
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = 120 - 2x_1 - 3x_2 = 0 \quad \cdots (3)$$
 
 **Solving:**
 Divide (1) by (2):
@@ -428,11 +428,11 @@ Input prices: wage $w = 3$, rental rate $r = 4$.
 $$\mathcal{L} = 3L + 4K + \lambda(160 - 2L^{0.5}K^{0.5})$$
 
 **FOC:**
-$$\frac{\partial \mathcal{L}}{\partial L} = 3 - \lambda L^{-0.5}K^{0.5} = 0 \tag{1}$$
+$$\frac{\partial \mathcal{L}}{\partial L} = 3 - \lambda L^{-0.5}K^{0.5} = 0 \quad \cdots (1)$$
 
-$$\frac{\partial \mathcal{L}}{\partial K} = 4 - \lambda L^{0.5}K^{-0.5} = 0 \tag{2}$$
+$$\frac{\partial \mathcal{L}}{\partial K} = 4 - \lambda L^{0.5}K^{-0.5} = 0 \quad \cdots (2)$$
 
-$$\frac{\partial \mathcal{L}}{\partial \lambda} = 160 - 2L^{0.5}K^{0.5} = 0 \tag{3}$$
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = 160 - 2L^{0.5}K^{0.5} = 0 \quad \cdots (3)$$
 
 ### 7.3 Solving the System
 

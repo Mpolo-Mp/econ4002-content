@@ -1,374 +1,155 @@
 {
-  "week": 2,
-  "title": "Mathematical Methods I: Linear Algebra",
-  "learning_objectives": [
-    "Perform matrix operations in R",
-    "Calculate determinants",
-    "Find matrix inverses",
-    "Solve systems of linear equations",
-    "Apply Cramer's Rule",
-    "Model economic systems with matrices"
-  ],
-  "problems": [
+  "metadata": {
+    "week": 2,
+    "title": "Mathematical Methods I: Linear Algebra",
+    "learning_objectives": [
+      "Perform matrix operations in R",
+      "Calculate determinants",
+      "Find matrix inverses",
+      "Solve systems of linear equations",
+      "Apply Cramer's Rule",
+      "Model economic systems with matrices"
+    ]
+  },
+  "questions": [
     {
       "id": "W2-P1",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Matrix Multiplication",
-      "difficulty": "basic",
       "question": "Given A = [[2,1],[3,5]] and B = [[4,0],[1,2]], calculate AB and BA. Does AB = BA?",
       "hints": [
         "For AB: element (i,j) = row i of A dot column j of B",
         "Use %*% in R for matrix multiplication, not *"
       ],
-      "solution": {
-        "AB": [[9, 2], [17, 10]],
-        "BA": [[8, 4], [8, 11]],
-        "equal": false,
-        "explanation": "AB ≠ BA. Matrix multiplication is not commutative.",
-        "r_code": [
-          "A <- matrix(c(2, 1, 3, 5), nrow = 2, byrow = TRUE)",
-          "B <- matrix(c(4, 0, 1, 2), nrow = 2, byrow = TRUE)",
-          "A %*% B",
-          "B %*% A",
-          "all.equal(A %*% B, B %*% A)  # FALSE"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W2-P2a",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Determinants",
-      "difficulty": "basic",
       "question": "Calculate the determinant of D1 = [[3,2],[1,4]]",
       "hints": [
         "For 2×2: det = ad - bc",
         "Use det() in R"
       ],
-      "solution": {
-        "formula": "det(D1) = 3(4) - 2(1) = 12 - 2 = 10",
-        "value": 10,
-        "invertible": true,
-        "r_code": "D1 <- matrix(c(3, 2, 1, 4), nrow = 2, byrow = TRUE)\ndet(D1)  # 10"
-      }
+      "solution": ""
     },
     {
       "id": "W2-P2b",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Determinants - Singular",
-      "difficulty": "basic",
       "question": "Calculate the determinant of D2 = [[6,2],[3,1]]",
-      "solution": {
-        "formula": "det(D2) = 6(1) - 2(3) = 6 - 6 = 0",
-        "value": 0,
-        "invertible": false,
-        "explanation": "det = 0 means matrix is singular (no inverse exists). Rows are linearly dependent: row 1 = 2 × row 2.",
-        "r_code": "D2 <- matrix(c(6, 2, 3, 1), nrow = 2, byrow = TRUE)\ndet(D2)  # 0"
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W2-P2c",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "3×3 Determinant",
-      "difficulty": "intermediate",
       "question": "Calculate the determinant of D3 = [[1,2,3],[7,0,8],[4,5,6]]",
       "hints": [
         "Expand along first row",
         "det = a(ei-fh) - b(di-fg) + c(dh-eg)"
       ],
-      "solution": {
-        "expansion": [
-          "det = 1·det([[0,8],[5,6]]) - 2·det([[7,8],[4,6]]) + 3·det([[7,0],[4,5]])",
-          "    = 1·(0·6 - 8·5) - 2·(7·6 - 8·4) + 3·(7·5 - 0·4)",
-          "    = 1·(-40) - 2·(42-32) + 3·(35)",
-          "    = -40 - 20 + 105",
-          "    = 45"
-        ],
-        "value": 45,
-        "r_code": "D3 <- matrix(c(1, 2, 3, 7, 0, 8, 4, 5, 6), nrow = 3, byrow = TRUE)\ndet(D3)  # 45"
-      }
+      "solution": ""
     },
     {
       "id": "W2-P3",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Matrix Inverse",
-      "difficulty": "intermediate",
       "question": "Find the inverse of A = [[2,1],[3,5]] using the 2×2 formula",
       "hints": [
         "Formula: A^(-1) = (1/det) × [[d,-b],[-c,a]]",
         "First find det(A)"
       ],
-      "solution": {
-        "det_A": 7,
-        "formula_applied": "A^(-1) = (1/7) × [[5,-1],[-3,2]]",
-        "inverse": [[0.714, -0.143], [-0.429, 0.286]],
-        "verification": "A × A^(-1) should equal I",
-        "r_code": [
-          "A <- matrix(c(2, 1, 3, 5), nrow = 2, byrow = TRUE)",
-          "det(A)  # 7",
-          "",
-          "# Manual calculation",
-          "A_inv_manual <- (1/7) * matrix(c(5, -1, -3, 2), nrow = 2, byrow = TRUE)",
-          "",
-          "# Using R",
-          "A_inv <- solve(A)",
-          "",
-          "# Verify",
-          "round(A %*% A_inv, 10)  # Identity matrix"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W2-P4a",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Solving Linear Systems",
-      "difficulty": "intermediate",
       "question": "Solve: 5x + 3y = 11, 4x + y = 6. Determine solution type.",
       "hints": [
         "Check determinant first",
         "Use solve(A, b) in R"
       ],
-      "solution": {
-        "matrix_form": {
-          "A": [[5, 3], [4, 1]],
-          "b": [11, 6]
-        },
-        "determinant": -7,
-        "solution_type": "Unique (det ≠ 0)",
-        "solution": {
-          "x": 1,
-          "y": 2
-        },
-        "verification": "5(1) + 3(2) = 11 ✓, 4(1) + 2 = 6 ✓",
-        "r_code": [
-          "A <- matrix(c(5, 3, 4, 1), nrow = 2, byrow = TRUE)",
-          "b <- c(11, 6)",
-          "det(A)  # -7 ≠ 0, unique solution exists",
-          "solve(A, b)  # x = 1, y = 2"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W2-P4b",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Dependent Systems",
-      "difficulty": "intermediate",
       "question": "Solve: 2x + y = 4, x + 0.5y = 2. Determine solution type.",
-      "solution": {
-        "matrix_form": {
-          "A": [[2, 1], [1, 0.5]],
-          "b": [4, 2]
-        },
-        "determinant": 0,
-        "solution_type": "Infinite solutions (dependent equations)",
-        "explanation": "Second equation is half of first. Any (x, y) satisfying 2x + y = 4 is a solution.",
-        "general_solution": "y = 4 - 2x for any x",
-        "r_code": [
-          "A <- matrix(c(2, 1, 1, 0.5), nrow = 2, byrow = TRUE)",
-          "det(A)  # 0 - singular matrix",
-          "# solve(A, b) would give error"
-        ]
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W2-P5",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Cramer's Rule",
-      "difficulty": "advanced",
       "question": "Use Cramer's Rule to solve: 2x - 4y + 6z = 3, -x + 3y + 2z = 2, 6x - 7y - 2z = 4",
       "hints": [
         "det(A_x) = det of A with column 1 replaced by b",
         "x = det(A_x) / det(A)"
       ],
-      "solution": {
-        "matrix_A": [[2, -4, 6], [-1, 3, 2], [6, -7, -2]],
-        "vector_b": [3, 2, 4],
-        "det_A": -56,
-        "det_Ax": -112,
-        "det_Ay": -56,
-        "det_Az": -28,
-        "solution": {
-          "x": 2,
-          "y": 1,
-          "z": 0.5
-        },
-        "r_code": [
-          "A <- matrix(c(2, -4, 6, -1, 3, 2, 6, -7, -2), nrow = 3, byrow = TRUE)",
-          "b <- c(3, 2, 4)",
-          "",
-          "det_A <- det(A)  # -56",
-          "",
-          "# Cramer's Rule",
-          "A_x <- A; A_x[,1] <- b",
-          "A_y <- A; A_y[,2] <- b", 
-          "A_z <- A; A_z[,3] <- b",
-          "",
-          "x <- det(A_x) / det_A  # 2",
-          "y <- det(A_y) / det_A  # 1",
-          "z <- det(A_z) / det_A  # 0.5",
-          "",
-          "# Verify with solve()",
-          "solve(A, b)  # Should match"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W2-P6",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Supply-Demand System",
-      "difficulty": "intermediate",
       "question": "Wheat market: Qd = 100 - 2P, Qs = -20 + 4P. Set up in matrix form and solve for equilibrium.",
       "hints": [
         "At equilibrium Q = Qd = Qs",
         "Rewrite as: Q + 2P = 100 and Q - 4P = -20"
       ],
-      "solution": {
-        "matrix_form": {
-          "system": "[[1, 2], [1, -4]] × [[Q], [P]] = [[100], [-20]]",
-          "A": [[1, 2], [1, -4]],
-          "b": [100, -20]
-        },
-        "determinant": -6,
-        "equilibrium": {
-          "P_star": 20,
-          "Q_star": 60
-        },
-        "r_code": [
-          "A <- matrix(c(1, 2, 1, -4), nrow = 2, byrow = TRUE)",
-          "b <- c(100, -20)",
-          "",
-          "det(A)  # -6 ≠ 0, unique equilibrium exists",
-          "eq <- solve(A, b)",
-          "Q_star <- eq[1]  # 60",
-          "P_star <- eq[2]  # 20",
-          "",
-          "# Plot",
-          "P_range <- 0:50",
-          "Qd <- 100 - 2 * P_range",
-          "Qs <- -20 + 4 * P_range",
-          "plot(Qd, P_range, type='l', col='blue', xlim=c(0,120))",
-          "lines(Qs, P_range, col='red')",
-          "points(Q_star, P_star, pch=19, cex=1.5)"
-        ]
-      }
+      "solution": ""
     },
     {
       "id": "W2-P7",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Two-Market Equilibrium",
-      "difficulty": "advanced",
       "question": "Wheat: Qw_d = 80 - 3Pw + Pc, Qw_s = -10 + 2Pw. Corn: Qc_d = 100 + Pw - 4Pc, Qc_s = -20 + 3Pc. Find equilibrium prices.",
       "hints": [
         "Set Qd = Qs for each market",
         "You get two equations in Pw and Pc"
       ],
-      "solution": {
-        "equilibrium_conditions": [
-          "Wheat: 80 - 3Pw + Pc = -10 + 2Pw → 5Pw - Pc = 90",
-          "Corn: 100 + Pw - 4Pc = -20 + 3Pc → -Pw + 7Pc = 120"
-        ],
-        "matrix_form": {
-          "A": [[5, -1], [-1, 7]],
-          "b": [90, 120]
-        },
-        "determinant": 34,
-        "equilibrium": {
-          "Pw_star": 21.18,
-          "Pc_star": 20.18,
-          "Qw_star": 32.35,
-          "Qc_star": 40.53
-        },
-        "r_code": [
-          "A <- matrix(c(5, -1, -1, 7), nrow = 2, byrow = TRUE)",
-          "b <- c(90, 120)",
-          "",
-          "prices <- solve(A, b)",
-          "Pw <- prices[1]  # 21.18",
-          "Pc <- prices[2]  # 20.18",
-          "",
-          "# Equilibrium quantities",
-          "Qw <- -10 + 2 * Pw  # 32.35",
-          "Qc <- -20 + 3 * Pc  # 40.53"
-        ],
-        "economic_interpretation": "Wheat and corn are substitutes. Higher corn prices increase wheat demand, raising wheat equilibrium price."
-      }
+      "solution": ""
     },
     {
       "id": "W2-P8",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Input-Output Analysis",
-      "difficulty": "advanced",
       "question": "Two sectors (Crops, Livestock) with technology matrix A = [[0.2,0.4],[0.1,0.2]]. Final demand: d = [80, 60]. Find total output.",
       "hints": [
         "x = (I - A)^(-1) × d",
         "This is the Leontief model"
       ],
-      "solution": {
-        "technology_matrix": [[0.2, 0.4], [0.1, 0.2]],
-        "I_minus_A": [[0.8, -0.4], [-0.1, 0.8]],
-        "leontief_inverse": [[1.379, 0.690], [0.172, 1.379]],
-        "total_output": {
-          "crops": 151.7,
-          "livestock": 96.6
-        },
-        "r_code": [
-          "A <- matrix(c(0.2, 0.4, 0.1, 0.2), nrow = 2, byrow = TRUE)",
-          "d <- c(80, 60)",
-          "I <- diag(2)",
-          "",
-          "leontief <- solve(I - A)",
-          "x <- leontief %*% d",
-          "",
-          "cat('Crops output:', x[1])",
-          "cat('Livestock output:', x[2])"
-        ],
-        "economic_interpretation": "To meet final demand of 80 crops + 60 livestock, total production must be 151.7 crops and 96.6 livestock due to intermediate inputs required."
-      }
+      "solution": ""
     },
     {
       "id": "W2-P10",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Quadratic Forms",
-      "difficulty": "advanced",
       "question": "For Q = 2x₁² + 3x₂² + 2x₁x₂, write in matrix form and determine definiteness.",
       "hints": [
         "Q = x'Ax where A is symmetric",
         "For 2x₁x₂ term, use a₁₂ = a₂₁ = 1",
         "Check eigenvalues for definiteness"
       ],
-      "solution": {
-        "matrix_form": {
-          "A": [[2, 1], [1, 3]],
-          "verification": "x'Ax = [x₁,x₂][[2,1],[1,3]][x₁;x₂] = 2x₁² + x₁x₂ + x₁x₂ + 3x₂² = 2x₁² + 2x₁x₂ + 3x₂²"
-        },
-        "eigenvalues": [1.382, 3.618],
-        "definiteness": "Positive definite (all eigenvalues > 0)",
-        "economic_implication": "Function has a minimum at origin",
-        "r_code": [
-          "A <- matrix(c(2, 1, 1, 3), nrow = 2, byrow = TRUE)",
-          "eigen(A)$values  # 3.618, 1.382 (both positive)",
-          "# Positive definite → minimum exists"
-        ]
-      }
+      "solution": ""
     }
-  ],
-  "ai_tutor_guidance": {
-    "common_errors": [
-      "Using * instead of %*% for matrix multiplication",
-      "Forgetting that matrix multiplication is not commutative",
-      "Trying to invert a singular matrix (det = 0)",
-      "Row/column dimension mismatch in multiplication",
-      "Forgetting byrow=TRUE when entering matrices"
-    ],
-    "socratic_prompts": [
-      "What does det(A) = 0 mean for the system of equations?",
-      "Why can't we find A^(-1) when det(A) = 0?",
-      "How does the Leontief inverse account for indirect effects?",
-      "What does positive definiteness tell us about optimization?"
-    ],
-    "extension_questions": [
-      "How would you add a third market to the two-market model?",
-      "What happens to the Leontief model if technology changes?",
-      "How are eigenvalues related to stability in dynamic systems?"
-    ]
-  }
+  ]
 }

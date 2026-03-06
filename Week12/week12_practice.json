@@ -1,451 +1,147 @@
 {
-  "week": 12,
-  "title": "Decision Making Under Uncertainty",
-  "learning_objectives": [
-    "Calculate expected value and expected utility",
-    "Determine certainty equivalents and risk premiums",
-    "Classify decision makers by risk attitude",
-    "Analyze insurance demand decisions",
-    "Calculate the value of information",
-    "Apply risk concepts to agricultural decisions"
-  ],
-  "problems": [
+  "metadata": {
+    "week": 12,
+    "title": "Decision Making Under Uncertainty",
+    "learning_objectives": [
+      "Calculate expected value and expected utility",
+      "Determine certainty equivalents and risk premiums",
+      "Classify decision makers by risk attitude",
+      "Analyze insurance demand decisions",
+      "Calculate the value of information",
+      "Apply risk concepts to agricultural decisions"
+    ]
+  },
+  "questions": [
     {
       "id": "W12-P1",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Expected Value Calculation",
-      "difficulty": "basic",
       "question": "A canola farmer faces uncertain prices at harvest. The distribution of prices is: $520/t with probability 0.3, $480/t with probability 0.5, $400/t with probability 0.2. The farmer expects to harvest 200 tonnes. Calculate: (a) Expected price, (b) Expected revenue, (c) Variance of revenue.",
       "hints": [
         "E[P] = Σ pᵢ × Pᵢ",
         "Revenue = Price × Quantity",
         "Var(R) = Σ pᵢ × (Rᵢ - E[R])²"
       ],
-      "solution": {
-        "a": {
-          "expected_price": "E[P] = 0.3(520) + 0.5(480) + 0.2(400) = 156 + 240 + 80 = $476/t"
-        },
-        "b": {
-          "expected_revenue": "E[R] = 200 × 476 = $95,200",
-          "alternative": "E[R] = 0.3(104,000) + 0.5(96,000) + 0.2(80,000) = 31,200 + 48,000 + 16,000 = $95,200"
-        },
-        "c": {
-          "revenues": "R₁ = $104,000, R₂ = $96,000, R₃ = $80,000",
-          "deviations_squared": "(104,000 - 95,200)² = 77,440,000; (96,000 - 95,200)² = 640,000; (80,000 - 95,200)² = 230,560,000",
-          "variance": "Var(R) = 0.3(77,440,000) + 0.5(640,000) + 0.2(230,560,000) = 23,232,000 + 320,000 + 46,112,000 = 69,664,000",
-          "std_dev": "σ = √69,664,000 ≈ $8,346"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W12-P2",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Expected Utility with Square Root",
-      "difficulty": "basic",
       "question": "A decision maker has utility function u(x) = √x and faces a lottery: win $10,000 with probability 0.4, win $2,500 with probability 0.6. Calculate: (a) Expected value, (b) Expected utility, (c) Certainty equivalent, (d) Risk premium.",
       "hints": [
         "EU = Σ pᵢ × u(xᵢ)",
         "CE: solve u(CE) = EU",
         "RP = EV - CE"
       ],
-      "solution": {
-        "a": {
-          "EV": "0.4(10,000) + 0.6(2,500) = 4,000 + 1,500 = $5,500"
-        },
-        "b": {
-          "EU": "0.4 × √10,000 + 0.6 × √2,500 = 0.4(100) + 0.6(50) = 40 + 30 = 70"
-        },
-        "c": {
-          "CE": "√CE = 70 → CE = 70² = $4,900"
-        },
-        "d": {
-          "RP": "EV - CE = 5,500 - 4,900 = $600"
-        },
-        "interpretation": "The decision maker would accept $4,900 with certainty instead of the lottery. They would pay $600 to eliminate the risk."
-      }
+      "solution": ""
     },
     {
       "id": "W12-P3",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Expected Utility with Logarithmic Function",
-      "difficulty": "intermediate",
       "question": "An investor with utility u(W) = ln(W) and current wealth $50,000 considers an investment: gain $30,000 with probability 0.5, lose $10,000 with probability 0.5. (a) Should they invest? (b) What is the maximum they would pay for this opportunity?",
       "hints": [
         "Compare EU(invest) vs EU(no invest)",
         "EU(invest) = 0.5×ln(80,000) + 0.5×ln(40,000)",
         "Maximum payment: solve for P where EU(invest with cost P) = EU(no invest)"
       ],
-      "solution": {
-        "a": {
-          "EU_no_invest": "ln(50,000) = 10.820",
-          "EU_invest": "0.5×ln(80,000) + 0.5×ln(40,000) = 0.5(11.290) + 0.5(10.597) = 10.943",
-          "decision": "EU_invest > EU_no_invest → INVEST",
-          "EV_gain": "0.5(30,000) + 0.5(-10,000) = $10,000 > 0 confirms investment is actuarially favorable"
-        },
-        "b": {
-          "setup": "Find P such that 0.5×ln(80,000-P) + 0.5×ln(40,000-P) = ln(50,000)",
-          "method": "This requires numerical solution. Let CE of investment = e^10.943 = $56,514",
-          "max_payment": "CE - current wealth = 56,514 - 50,000 = $6,514",
-          "verification": "At P = $6,514: EU = 0.5×ln(73,486) + 0.5×ln(33,486) ≈ 10.82 ≈ EU_no_invest"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W12-P4",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Risk Attitudes from Utility Function",
-      "difficulty": "intermediate",
       "question": "For each utility function, determine risk attitude and calculate ARA and RRA: (a) u(x) = x², (b) u(x) = -e^(-0.001x), (c) u(x) = x^0.5, (d) u(x) = 100 + 5x.",
-      "solution": {
-        "a": {
-          "function": "u(x) = x²",
-          "derivatives": "u'(x) = 2x, u''(x) = 2 > 0",
-          "risk_attitude": "Risk LOVING (convex, u'' > 0)",
-          "ARA": "A(x) = -2/(2x) = -1/x < 0 (confirms risk loving)",
-          "RRA": "R(x) = -x(2)/(2x) = -1 (constant)"
-        },
-        "b": {
-          "function": "u(x) = -e^(-0.001x)",
-          "derivatives": "u'(x) = 0.001e^(-0.001x) > 0, u''(x) = -0.000001e^(-0.001x) < 0",
-          "risk_attitude": "Risk AVERSE (concave, u'' < 0)",
-          "ARA": "A(x) = 0.000001e^(-0.001x) / (0.001e^(-0.001x)) = 0.001 (constant)",
-          "RRA": "R(x) = 0.001x (increasing with wealth)",
-          "name": "CARA (Constant Absolute Risk Aversion) utility"
-        },
-        "c": {
-          "function": "u(x) = x^0.5",
-          "derivatives": "u'(x) = 0.5x^(-0.5), u''(x) = -0.25x^(-1.5) < 0",
-          "risk_attitude": "Risk AVERSE (concave)",
-          "ARA": "A(x) = 0.25x^(-1.5) / (0.5x^(-0.5)) = 0.5/x (decreasing with wealth)",
-          "RRA": "R(x) = x × (0.5/x) = 0.5 (constant)",
-          "name": "CRRA (Constant Relative Risk Aversion) with γ = 0.5"
-        },
-        "d": {
-          "function": "u(x) = 100 + 5x",
-          "derivatives": "u'(x) = 5, u''(x) = 0",
-          "risk_attitude": "Risk NEUTRAL (linear)",
-          "ARA": "A(x) = 0",
-          "RRA": "R(x) = 0"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W12-P5",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Fair Gamble Analysis",
-      "difficulty": "basic",
       "question": "A farmer with wealth $100,000 and utility u(W) = √W is offered a bet: win $44,000 with probability 0.5, lose $36,000 with probability 0.5. (a) Is this a fair bet? (b) Will the farmer accept? (c) What is the risk premium for this gamble?",
-      "solution": {
-        "a": {
-          "EV_gamble": "0.5(44,000) + 0.5(-36,000) = 22,000 - 18,000 = $4,000",
-          "conclusion": "NOT a fair bet (EV > 0, favorable to gambler)"
-        },
-        "b": {
-          "EU_no_bet": "√100,000 = 316.23",
-          "EU_bet": "0.5×√144,000 + 0.5×√64,000 = 0.5(379.47) + 0.5(252.98) = 316.23",
-          "decision": "INDIFFERENT (EU_bet = EU_no_bet)",
-          "note": "Despite positive expected value, risk aversion exactly offsets the advantage"
-        },
-        "c": {
-          "EV_with_bet": "100,000 + 4,000 = $104,000",
-          "CE_bet": "316.23² = $100,000",
-          "RP": "EV - CE = 104,000 - 100,000 = $4,000",
-          "interpretation": "The farmer would need $4,000 compensation to accept this risk"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W12-P6",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Insurance Demand",
-      "difficulty": "intermediate",
       "question": "A sheep farmer has a flock worth $200,000. There is a 5% chance of disease causing $150,000 loss. With u(W) = ln(W): (a) Calculate EU without insurance. (b) What is the fair premium? (c) Will the farmer buy at fair premium? (d) What is maximum premium they would pay?",
       "hints": [
         "Fair premium = expected loss",
         "With full insurance, wealth is certain",
         "Max premium: EU(insured) = EU(uninsured)"
       ],
-      "solution": {
-        "a": {
-          "outcomes": "No disease: W = $200,000 (prob 0.95); Disease: W = $50,000 (prob 0.05)",
-          "EU_no_ins": "0.95×ln(200,000) + 0.05×ln(50,000) = 0.95(12.206) + 0.05(10.820) = 11.596 + 0.541 = 12.137"
-        },
-        "b": {
-          "fair_premium": "P_fair = 0.05 × $150,000 = $7,500"
-        },
-        "c": {
-          "wealth_insured": "W = 200,000 - 7,500 = $192,500 (certain)",
-          "EU_insured": "ln(192,500) = 12.168",
-          "comparison": "EU_insured (12.168) > EU_no_ins (12.137)",
-          "decision": "YES, farmer buys at fair premium"
-        },
-        "d": {
-          "setup": "Find P where ln(200,000 - P) = 12.137",
-          "solution": "200,000 - P = e^12.137 = $186,232",
-          "max_premium": "P_max = 200,000 - 186,232 = $13,768",
-          "loading": "Max loading = 13,768/7,500 = 1.84 (84% above fair)"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W12-P7",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Value of Perfect Information",
-      "difficulty": "intermediate",
       "question": "A fruit grower must decide whether to apply expensive frost protection ($5,000 cost). Without protection, frost causes $40,000 damage. Frost probability is 0.2. With u(W) = √W and initial wealth $100,000, calculate: (a) Optimal decision without forecast, (b) Value of perfect frost forecast.",
-      "solution": {
-        "a": {
-          "EU_no_protect": "0.8×√100,000 + 0.2×√60,000 = 0.8(316.23) + 0.2(244.95) = 252.98 + 48.99 = 301.97",
-          "EU_protect": "√95,000 = 308.22 (certain outcome: spend $5,000)",
-          "decision": "PROTECT (EU_protect > EU_no_protect)"
-        },
-        "b": {
-          "with_perfect_info": {
-            "if_frost_forecast": "Protect → W = $95,000",
-            "if_no_frost_forecast": "Don't protect → W = $100,000"
-          },
-          "EU_with_info": "0.2×√95,000 + 0.8×√100,000 = 0.2(308.22) + 0.8(316.23) = 61.64 + 252.98 = 314.63",
-          "CE_no_info": "308.22² = $95,000 (certain, since protection is chosen)",
-          "CE_with_info": "314.63² = $98,992",
-          "VPI": "98,992 - 95,000 = $3,992",
-          "interpretation": "Farmer would pay up to $3,992 for perfect frost forecast"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W12-P8",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Crop Choice Under Risk",
-      "difficulty": "intermediate",
       "question": "A farmer allocates 100 ha between wheat and lentils. Returns per ha: Wheat (E=400, σ=150), Lentils (E=500, σ=300). Correlation ρ=0.2. Using mean-variance framework with risk aversion A=0.002: (a) Write portfolio expected return and variance. (b) Find optimal wheat allocation.",
       "hints": [
         "E[Rp] = w×E[Rw] + (100-w)×E[RL]",
         "Var(Rp) = w²σw² + (100-w)²σL² + 2w(100-w)ρσwσL",
         "Max E[Rp] - (A/2)Var(Rp)"
       ],
-      "solution": {
-        "a": {
-          "expected_return": "E[Rp] = 400w + 500(100-w) = 50,000 - 100w",
-          "variance": "Var(Rp) = w²(150²) + (100-w)²(300²) + 2w(100-w)(0.2)(150)(300)",
-          "variance_simplified": "= 22,500w² + 90,000(100-w)² + 18,000w(100-w)",
-          "expanded": "= 22,500w² + 90,000(10,000 - 200w + w²) + 1,800,000w - 18,000w²",
-          "final": "= 94,500w² - 19,800,000w + 900,000,000"
-        },
-        "b": {
-          "objective": "max U = E[Rp] - (A/2)Var(Rp) = (50,000 - 100w) - 0.001(94,500w² - 19,800,000w + 900,000,000)",
-          "simplified": "= 50,000 - 100w - 94.5w² + 19,800w - 900,000",
-          "final": "= -850,000 + 19,700w - 94.5w²",
-          "FOC": "dU/dw = 19,700 - 189w = 0",
-          "optimal_w": "w* = 19,700/189 = 104.2 ha",
-          "constraint": "Since w ≤ 100, optimal is w* = 100 (all wheat)",
-          "interpretation": "Despite lower expected return, wheat's lower variance makes full specialization optimal at this risk aversion level"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W12-P9",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "St. Petersburg Paradox",
-      "difficulty": "intermediate",
       "question": "Explain the St. Petersburg Paradox and how expected utility theory resolves it. If u(x) = ln(x), what is the certainty equivalent for the St. Petersburg game?",
-      "solution": {
-        "paradox": {
-          "game": "Flip coin until heads; receive $2^t if heads on flip t",
-          "EV_calculation": "EV = Σ(1/2^t)×2^t = Σ1 = ∞",
-          "paradox": "Despite infinite EV, people only pay $10-20 to play"
-        },
-        "resolution": {
-          "EU_with_log": "EU = Σ(1/2^t)×ln(2^t) = Σ(t×ln2)/2^t",
-          "series": "= ln2 × Σ(t/2^t) = ln2 × 2 = 2ln2 ≈ 1.386",
-          "CE": "e^1.386 ≈ $4",
-          "interpretation": "Log utility transforms the infinite EV into finite EU with CE ≈ $4"
-        },
-        "general_lesson": "People evaluate outcomes through a utility function with diminishing marginal utility, which bounds the valuation of extreme outcomes."
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W12-P10",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Water Allocation Under Uncertainty",
-      "difficulty": "advanced",
       "question": "A water manager allocates between irrigation (I) and environment (E). Inflow is H (high, prob 0.6) or L (low, prob 0.4). Benefits: B_I(I) = 100√I, B_E(E) = 80√E. Available water: 100 ML (high), 40 ML (low). Find state-contingent optimal allocation and expected total benefits.",
       "hints": [
         "In each state, max B_I + B_E subject to I + E ≤ Available",
         "Use Lagrangian or equal marginal benefits"
       ],
-      "solution": {
-        "high_inflow": {
-          "constraint": "I_H + E_H ≤ 100",
-          "FOC": "MB_I = MB_E → 50/√I = 40/√E → √E/√I = 40/50 = 0.8",
-          "ratio": "E/I = 0.64 → E = 0.64I",
-          "substituting": "I + 0.64I = 100 → I_H = 61.0, E_H = 39.0",
-          "benefits": "B_H = 100√61 + 80√39 = 781 + 500 = 1,281"
-        },
-        "low_inflow": {
-          "constraint": "I_L + E_L ≤ 40",
-          "same_ratio": "E_L = 0.64 I_L",
-          "solving": "I_L + 0.64I_L = 40 → I_L = 24.4, E_L = 15.6",
-          "benefits": "B_L = 100√24.4 + 80√15.6 = 494 + 316 = 810"
-        },
-        "expected_benefits": {
-          "EB": "0.6(1,281) + 0.4(810) = 769 + 324 = $1,093"
-        },
-        "allocation_summary": {
-          "irrigation": "61.0 ML (high) or 24.4 ML (low)",
-          "environment": "39.0 ML (high) or 15.6 ML (low)",
-          "env_share": "≈ 39% in both states (due to identical functional forms)"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W12-P11",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Imperfect Information Value",
-      "difficulty": "advanced",
       "question": "Using the frost example (W12-P7), suppose a forecast correctly predicts frost 80% of the time when frost occurs, and correctly predicts no frost 90% of the time when no frost occurs. Prior frost probability is 0.2. (a) Calculate posterior probabilities using Bayes' rule. (b) Find expected utility with imperfect forecast. (c) Calculate value of imperfect information.",
-      "solution": {
-        "a": {
-          "given": {
-            "P(frost)": "0.2",
-            "P(predict_frost|frost)": "0.80",
-            "P(predict_no_frost|no_frost)": "0.90",
-            "P(predict_frost|no_frost)": "0.10",
-            "P(predict_no_frost|frost)": "0.20"
-          },
-          "P_predict_frost": "P(F|frost)P(frost) + P(F|no)P(no) = 0.80(0.2) + 0.10(0.8) = 0.16 + 0.08 = 0.24",
-          "P_predict_no": "1 - 0.24 = 0.76",
-          "posterior_frost_given_F": "P(frost|F) = 0.80(0.2)/0.24 = 0.667",
-          "posterior_frost_given_NF": "P(frost|NF) = 0.20(0.2)/0.76 = 0.053"
-        },
-        "b": {
-          "if_forecast_frost": {
-            "P_frost": "0.667",
-            "EU_protect": "√95,000 = 308.22",
-            "EU_no_protect": "0.333×√100,000 + 0.667×√60,000 = 105.3 + 163.4 = 268.7",
-            "decision": "PROTECT"
-          },
-          "if_forecast_no_frost": {
-            "P_frost": "0.053",
-            "EU_protect": "308.22",
-            "EU_no_protect": "0.947×√100,000 + 0.053×√60,000 = 299.5 + 13.0 = 312.5",
-            "decision": "DON'T PROTECT"
-          },
-          "EU_with_imperfect_info": "0.24×308.22 + 0.76×312.5 = 74.0 + 237.5 = 311.5"
-        },
-        "c": {
-          "CE_no_info": "$95,000 (from W12-P7)",
-          "CE_imperfect": "311.5² = $97,032",
-          "VPII": "97,032 - 95,000 = $2,032",
-          "comparison": "VPII ($2,032) < VPI ($3,992)",
-          "information_efficiency": "2,032/3,992 = 51% of perfect info value captured"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W12-P12",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "R Implementation",
-      "difficulty": "intermediate",
       "question": "Write R code to: (a) Calculate EU, CE, and RP for any lottery and utility function, (b) Plot utility function with EU graphical interpretation, (c) Calculate insurance demand curve.",
-      "solution": {
-        "r_code": [
-          "# (a) EU, CE, RP Calculator",
-          "eu_analysis <- function(outcomes, probs, u_fn, u_inv) {",
-          "  EV <- sum(probs * outcomes)",
-          "  EU <- sum(probs * sapply(outcomes, u_fn))",
-          "  CE <- u_inv(EU)",
-          "  RP <- EV - CE",
-          "  list(EV = EV, EU = EU, CE = CE, RP = RP)",
-          "}",
-          "",
-          "# Example with sqrt utility",
-          "u_sqrt <- function(x) sqrt(x)",
-          "u_sqrt_inv <- function(u) u^2",
-          "",
-          "result <- eu_analysis(",
-          "  outcomes = c(50, 450),",
-          "  probs = c(0.5, 0.5),",
-          "  u_fn = u_sqrt,",
-          "  u_inv = u_sqrt_inv",
-          ")",
-          "print(result)",
-          "",
-          "# (b) Plot with EU interpretation",
-          "plot_eu <- function(outcomes, probs, u_fn, xlim = NULL) {",
-          "  if (is.null(xlim)) xlim <- c(0, max(outcomes) * 1.1)",
-          "  x <- seq(xlim[1] + 0.1, xlim[2], length = 200)",
-          "  ",
-          "  EU <- sum(probs * sapply(outcomes, u_fn))",
-          "  EV <- sum(probs * outcomes)",
-          "  ",
-          "  plot(x, sapply(x, u_fn), type = 'l', lwd = 2,",
-          "       xlab = 'Wealth/Outcome', ylab = 'Utility',",
-          "       main = 'Expected Utility Analysis')",
-          "  ",
-          "  # Chord between outcomes",
-          "  segments(outcomes[1], u_fn(outcomes[1]),",
-          "           outcomes[2], u_fn(outcomes[2]),",
-          "           col = 'red', lwd = 2, lty = 2)",
-          "  ",
-          "  # Mark points",
-          "  points(outcomes, sapply(outcomes, u_fn), pch = 19, col = 'blue', cex = 1.5)",
-          "  abline(h = EU, col = 'green', lty = 3)",
-          "  ",
-          "  legend('bottomright', c('u(x)', 'Chord', 'EU'),",
-          "         col = c('black', 'red', 'green'), lwd = 2, lty = c(1, 2, 3))",
-          "}",
-          "",
-          "plot_eu(c(50, 450), c(0.5, 0.5), u_sqrt)",
-          "",
-          "# (c) Insurance demand curve",
-          "insurance_demand <- function(W0, loss, p_loss, u_fn, u_inv, premium_range) {",
-          "  demand <- numeric(length(premium_range))",
-          "  ",
-          "  EU_no_ins <- (1 - p_loss) * u_fn(W0) + p_loss * u_fn(W0 - loss)",
-          "  ",
-          "  for (i in seq_along(premium_range)) {",
-          "    P <- premium_range[i]",
-          "    EU_ins <- u_fn(W0 - P)  # Full coverage",
-          "    demand[i] <- ifelse(EU_ins >= EU_no_ins, 1, 0)",
-          "  }",
-          "  ",
-          "  max_P <- W0 - u_inv(EU_no_ins)",
-          "  list(premiums = premium_range, demand = demand, max_premium = max_P)",
-          "}",
-          "",
-          "ins <- insurance_demand(W0 = 200000, loss = 150000, p_loss = 0.05,",
-          "                        u_fn = log, u_inv = exp,",
-          "                        premium_range = seq(5000, 20000, by = 500))",
-          "cat('Maximum premium:', ins$max_premium)"
-        ],
-        "expected_output": {
-          "eu_analysis": "EV = 250, EU ≈ 14.14, CE = 200, RP = 50 (for scaled sqrt)",
-          "max_premium": "≈ $13,768"
-        }
-      }
+      "hints": [],
+      "solution": ""
     }
-  ],
-  "ai_tutor_guidance": {
-    "common_errors": [
-      "Confusing EV with EU - remember to apply utility function first",
-      "Wrong sign on risk premium - RP = EV - CE, positive for risk averse",
-      "Forgetting that CE is found by inverting utility: CE = u⁻¹(EU)",
-      "Mixing up concave/convex with risk averse/loving",
-      "Not recognizing that fair premium = expected loss",
-      "Errors in Bayes' rule calculations for imperfect information"
-    ],
-    "socratic_prompts": [
-      "What does the concavity of the utility function tell us?",
-      "Why would someone pay more than the fair premium for insurance?",
-      "What happens to the risk premium as the stakes get larger?",
-      "How does the value of information depend on the decision problem?",
-      "What assumptions does expected utility theory require?"
-    ],
-    "extension_questions": [
-      "How would prospect theory change our analysis of insurance demand?",
-      "What is the relationship between risk aversion and portfolio diversification?",
-      "How do real-world insurance markets account for adverse selection?",
-      "What are the implications of different measures of risk aversion for policy?"
-    ]
-  }
+  ]
 }

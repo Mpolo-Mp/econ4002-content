@@ -167,10 +167,10 @@ B %*% A    # Different result!
 The **determinant** is a scalar value that characterizes a square matrix.
 
 **2×2 Determinant**:
-$$\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc$$
+$$\begin{vmatrix} a & b \\ c & d \end{vmatrix} = ad - bc$$
 
 **3×3 Determinant** (expansion by first row):
-$$\det\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$
+$$\begin{vmatrix} a & b & c \\ d & e & f \\ g & h & i \end{vmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)$$
 
 ```r
 A <- matrix(c(1, 2, 3, 4), nrow = 2, byrow = TRUE)
@@ -201,7 +201,7 @@ Rewrite in standard form ($Ax = b$):
 $$\begin{bmatrix} 1 & 2 \\ 1 & -4 \end{bmatrix} \begin{bmatrix} Q \\ P \end{bmatrix} = \begin{bmatrix} 100 \\ -20 \end{bmatrix}$$
 
 Determinant:
-$$\det\begin{bmatrix} 1 & 2 \\ 1 & -4 \end{bmatrix} = 1(-4) - 2(1) = -6 \neq 0$$
+$$\begin{vmatrix} 1 & 2 \\ 1 & -4 \end{vmatrix} = 1(-4) - 2(1) = -6 \neq 0$$
 
 Since $\det \neq 0$, there is a unique equilibrium.
 
@@ -285,9 +285,9 @@ $$\begin{align}
 3x_1 + 5x_2 &= 19
 \end{align}$$
 
-$$x_1 = \frac{\det\begin{bmatrix} 8 & 1 \\ 19 & 5 \end{bmatrix}}{\det\begin{bmatrix} 2 & 1 \\ 3 & 5 \end{bmatrix}} = \frac{40 - 19}{10 - 3} = \frac{21}{7} = 3$$
+$$x_1 = \frac{\begin{vmatrix} 8 & 1 \\ 19 & 5 \end{vmatrix}}{\begin{vmatrix} 2 & 1 \\ 3 & 5 \end{vmatrix}} = \frac{40 - 19}{10 - 3} = \frac{21}{7} = 3$$
 
-$$x_2 = \frac{\det\begin{bmatrix} 2 & 8 \\ 3 & 19 \end{bmatrix}}{\det\begin{bmatrix} 2 & 1 \\ 3 & 5 \end{bmatrix}} = \frac{38 - 24}{7} = \frac{14}{7} = 2$$
+$$x_2 = \frac{\begin{vmatrix} 2 & 8 \\ 3 & 19 \end{vmatrix}}{\begin{vmatrix} 2 & 1 \\ 3 & 5 \end{vmatrix}} = \frac{38 - 24}{7} = \frac{14}{7} = 2$$
 
 ```r
 # Cramer's Rule implementation

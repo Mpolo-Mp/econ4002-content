@@ -1,505 +1,134 @@
 {
-  "week": 11,
-  "title": "Welfare Economics: Measuring Economic Well-Being",
-  "learning_objectives": [
-    "Calculate consumer and producer surplus",
-    "Analyze welfare effects of price controls",
-    "Apply the fundamental welfare theorems",
-    "Calculate CV and EV for exact welfare measurement",
-    "Compare approximate and exact welfare measures",
-    "Evaluate agricultural policy effects"
-  ],
-  "problems": [
+  "metadata": {
+    "week": 11,
+    "title": "Welfare Economics: Measuring Economic Well-Being",
+    "learning_objectives": [
+      "Calculate consumer and producer surplus",
+      "Analyze welfare effects of price controls",
+      "Apply the fundamental welfare theorems",
+      "Calculate CV and EV for exact welfare measurement",
+      "Compare approximate and exact welfare measures",
+      "Evaluate agricultural policy effects"
+    ]
+  },
+  "questions": [
     {
       "id": "W11-P1",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Consumer Surplus from Table",
-      "difficulty": "basic",
       "question": "WTP per unit: 1st=$50, 2nd=$40, 3rd=$30, 4th=$20, 5th=$10. Price=$25. Find units purchased and CS.",
       "hints": [
         "Consumer buys units where WTP ≥ price",
         "CS = sum of (WTP - price) for each unit purchased"
       ],
-      "solution": {
-        "a": {
-          "units_purchased": "3 units (WTP of $50, $40, $30 all ≥ $25; 4th unit WTP=$20 < $25)"
-        },
-        "b": {
-          "expenditure": "$25 × 3 = $75"
-        },
-        "c": {
-          "total_WTP": "$50 + $40 + $30 = $120"
-        },
-        "d": {
-          "CS": "$120 - $75 = $45",
-          "alternative": "(50-25) + (40-25) + (30-25) = 25 + 15 + 5 = $45"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W11-P2",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "easy",
       "topic": "Producer Surplus from Table",
-      "difficulty": "basic",
       "question": "Min price per unit: 1st=$8, 2nd=$12, 3rd=$16, 4th=$20, 5th=$24. Market price=$18. Find units supplied and PS.",
-      "solution": {
-        "a": {
-          "units_supplied": "3 units (min prices $8, $12, $16 all ≤ $18; 4th unit needs $20 > $18)"
-        },
-        "b": {
-          "revenue": "$18 × 3 = $54"
-        },
-        "c": {
-          "PS": "(18-8) + (18-12) + (18-16) = 10 + 6 + 2 = $18",
-          "alternative": "Revenue - min acceptable = $54 - ($8+$12+$16) = $54 - $36 = $18"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P3",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Market Equilibrium Welfare",
-      "difficulty": "intermediate",
       "question": "Demand: Qᵈ = 7 - p, Supply: Qˢ = p - 1. Find equilibrium, CS, PS, and verify welfare maximum.",
       "hints": [
         "Equilibrium: Qᵈ = Qˢ",
         "CS = ½ × base × height (triangle under demand)",
         "Test Q = 2 and Q = 4 to verify maximum"
       ],
-      "solution": {
-        "a": {
-          "equilibrium": "7 - p = p - 1 → 8 = 2p → p* = 4",
-          "quantity": "Q* = 7 - 4 = 3"
-        },
-        "b": {
-          "inverse_demand": "Pᵈ = 7 - Q, intercept at p = 7",
-          "CS": "½ × (7 - 4) × 3 = ½ × 3 × 3 = 4.5"
-        },
-        "c": {
-          "inverse_supply": "Pˢ = 1 + Q, intercept at p = 1",
-          "PS": "½ × (4 - 1) × 3 = ½ × 3 × 3 = 4.5"
-        },
-        "d": {
-          "total_welfare": "W = CS + PS = 4.5 + 4.5 = 9"
-        },
-        "e": {
-          "at_Q_2": {
-            "demand_price": "Pᵈ = 7 - 2 = 5",
-            "supply_price": "Pˢ = 1 + 2 = 3",
-            "CS": "½ × (7-5) × 2 = 2",
-            "PS": "½ × (3-1) × 2 = 2",
-            "W": "4 < 9"
-          },
-          "at_Q_4": {
-            "note": "Q=4 is beyond equilibrium",
-            "demand_price": "Pᵈ = 7 - 4 = 3",
-            "supply_price": "Pˢ = 1 + 4 = 5",
-            "problem": "Supply price > demand price; trade destroys value",
-            "W": "Would require forcing trade at loss"
-          },
-          "conclusion": "Q* = 3 maximizes welfare"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W11-P4",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Price Ceiling Analysis",
-      "difficulty": "intermediate",
       "question": "Market: Qᵈ = 7 - p, Qˢ = p - 1. Price ceiling pᶜ = 2. Full welfare analysis.",
-      "solution": {
-        "a": {
-          "Qᵈ": "7 - 2 = 5"
-        },
-        "b": {
-          "Qˢ": "2 - 1 = 1"
-        },
-        "c": {
-          "shortage": "Qᵈ - Qˢ = 5 - 1 = 4 units"
-        },
-        "d": {
-          "Q_traded": "1 unit (limited by supply)"
-        },
-        "e": {
-          "at_Q_1": {
-            "demand_price": "Pᵈ(1) = 7 - 1 = 6 (value of the unit)",
-            "ceiling_price": "2"
-          },
-          "CS": "Area = (7 - 6)(1)/2 + (6 - 2)(1) = 0.5 + 4 = 4.5",
-          "PS": "Area = (2 - 1)(1)/2 + (2 - 2)(1) = 0.5",
-          "note_CS": "Consumer gets unit valued at $6 for only $2",
-          "total_W": "4.5 + 0.5 = 5"
-        },
-        "f": {
-          "DWL": "W_free - W_ceiling = 9 - 5 = 4",
-          "interpretation": "Lost trades for units 2 and 3"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P5",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Price Floor Analysis",
-      "difficulty": "intermediate",
       "question": "Market: Qᵈ = 7 - p, Qˢ = p - 1. Price floor pᶠ = 5. Welfare analysis with government purchase.",
-      "solution": {
-        "a": {
-          "Qᵈ": "7 - 5 = 2"
-        },
-        "b": {
-          "Qˢ": "5 - 1 = 4"
-        },
-        "c": {
-          "surplus": "Qˢ - Qᵈ = 4 - 2 = 2 units"
-        },
-        "d": {
-          "if_only_demanded_traded": {
-            "Q_traded": "2",
-            "CS": "½(7-5)(2) = 2",
-            "PS": "½(5-1)(2) = 4",
-            "W": "6",
-            "DWL": "9 - 6 = 3"
-          }
-        },
-        "e": {
-          "gov_expenditure": "pᶠ × surplus = 5 × 2 = $10"
-        },
-        "f": {
-          "with_gov_purchase": {
-            "CS": "2 (consumers still buy 2 at price 5)",
-            "PS": "Producers sell 4 at price 5",
-            "PS_calculation": "5 × 4 - (area under supply for 4) = 20 - 10 = 10",
-            "gov_cost": "-10 (welfare loss)",
-            "net_W": "2 + 10 - 10 = 2",
-            "or": "DWL increases due to overproduction"
-          }
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P6",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Inelastic Supply Price Ceiling",
-      "difficulty": "intermediate",
       "question": "Demand: Qᵈ = 10 - p, Supply: Qˢ = 4 (inelastic). Price ceiling pᶜ = 4. Show DWL = 0.",
-      "solution": {
-        "a": {
-          "equilibrium": "4 = 10 - p → p* = 6"
-        },
-        "b": {
-          "CS": "½(10 - 6)(4) = 8",
-          "PS": "(6 - 0)(4) = 24 (rectangle: price × quantity)",
-          "note": "With vertical supply, PS is entire rectangle"
-        },
-        "c": {
-          "with_ceiling": {
-            "Q_traded": "4 (supply unchanged)",
-            "CS_new": "½(10 - 4)(4) = 12",
-            "PS_new": "(4 - 0)(4) = 16"
-          }
-        },
-        "d": {
-          "DWL": "W_old - W_new = (8 + 24) - (12 + 16) = 32 - 28 = 4",
-          "correction": "Wait, let me recalculate with proper areas",
-          "recalc": {
-            "original_W": "32",
-            "new_W": "28",
-            "apparent_DWL": "4"
-          },
-          "proper_analysis": {
-            "note": "With inelastic supply, no quantity distortion",
-            "CS_old": "½(10-6)(4) = 8",
-            "PS_old": "6 × 4 = 24 (assuming MC = 0 for simplicity)",
-            "CS_new": "½(10-4)(4) = 12",
-            "PS_new": "4 × 4 = 16",
-            "transfer": "8 from PS to CS",
-            "DWL": "0 if we properly account"
-          }
-        },
-        "e": {
-          "explanation": "With perfectly inelastic supply, the same quantity trades regardless of price. No trades are foregone, so there is no efficiency loss—only a redistribution from producers to consumers."
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P7",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "CV and EV Calculation - Price Decrease",
-      "difficulty": "advanced",
       "question": "U = x₁x₂, m = 100, p₂ = 5. Price falls: p₁⁰ = 10 → p₁¹ = 5. Calculate CV, EV, ΔCS.",
       "hints": [
         "For U = x₁x₂: demands are x₁ = m/(2p₁), x₂ = m/(2p₂)",
         "Expenditure function: e(p₁,p₂,u) = 2√(u·p₁·p₂)"
       ],
-      "solution": {
-        "a": {
-          "initial_bundle": "x₁⁰ = 100/(2×10) = 5, x₂⁰ = 100/(2×5) = 10",
-          "initial_utility": "u⁰ = 5 × 10 = 50"
-        },
-        "b": {
-          "final_bundle": "x₁¹ = 100/(2×5) = 10, x₂¹ = 100/(2×5) = 10",
-          "final_utility": "u¹ = 10 × 10 = 100"
-        },
-        "c": {
-          "expenditure_function": "e(p₁, p₂, u) = 2√(u × p₁ × p₂)"
-        },
-        "d": {
-          "CV_formula": "CV = e(p₁¹, p₂, u⁰) - m",
-          "CV_calculation": "e(5, 5, 50) = 2√(50×5×5) = 2√1250 = 70.71",
-          "CV": "70.71 - 100 = -29.29",
-          "interpretation": "Consumer would pay $29.29 for this price decrease"
-        },
-        "e": {
-          "EV_formula": "EV = e(p₁⁰, p₂, u¹) - m",
-          "EV_calculation": "e(10, 5, 100) = 2√(100×10×5) = 2√5000 = 141.42",
-          "EV": "141.42 - 100 = 41.42",
-          "interpretation": "Price decrease equivalent to $41.42 income increase"
-        },
-        "f": {
-          "marshallian_demand": "x₁ = 50/p₁",
-          "CS_integral": "∫₅¹⁰ (50/p₁) dp₁ = 50[ln p₁]₅¹⁰ = 50(ln10 - ln5)",
-          "CS": "50 × ln(2) ≈ 50 × 0.693 = 34.66"
-        },
-        "g": {
-          "comparison": "|CV| = 29.29 < ΔCS = 34.66 < EV = 41.42",
-          "verified": "CV < ΔCS < EV for price decrease of normal good ✓"
-        }
-      }
+      "solution": ""
     },
     {
       "id": "W11-P8",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "CV and EV - Price Increase",
-      "difficulty": "advanced",
       "question": "Same utility U = x₁x₂, m = 100, p₂ = 5. Price RISES: p₁⁰ = 5 → p₁¹ = 10. Calculate CV, EV, ΔCS.",
-      "solution": {
-        "a": {
-          "initial": "u⁰ = (100/10)(100/10) = 10 × 10 = 100",
-          "final": "u¹ = (100/20)(100/10) = 5 × 10 = 50"
-        },
-        "b": {
-          "CV_formula": "CV = e(p₁¹, p₂, u⁰) - m = e(10, 5, 100) - 100",
-          "CV": "2√5000 - 100 = 141.42 - 100 = 41.42",
-          "interpretation": "Consumer needs $41.42 compensation for price increase"
-        },
-        "c": {
-          "EV_formula": "EV = e(p₁⁰, p₂, u¹) - m = e(5, 5, 50) - 100",
-          "EV": "70.71 - 100 = -29.29",
-          "interpretation": "Price increase equivalent to $29.29 income loss"
-        },
-        "d": {
-          "CS": "-50 ln(2) ≈ -34.66 (negative because price rose)"
-        },
-        "e": {
-          "for_price_increase": "EV < ΔCS < CV",
-          "values": "-29.29 < -34.66 < +41.42",
-          "note": "EV and ΔCS are negative (welfare loss), CV is positive (compensation needed)"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P9",
-      "type": "conceptual",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "Welfare Theorems",
-      "difficulty": "intermediate",
       "question": "State and apply the two fundamental welfare theorems.",
-      "solution": {
-        "a": {
-          "first_theorem": "Every competitive equilibrium is Pareto efficient—no reallocation can make someone better off without making someone worse off."
-        },
-        "b": {
-          "conditions": [
-            "Perfect competition (price-taking behavior)",
-            "No externalities (all costs/benefits internalized)",
-            "Complete markets (all goods can be traded)",
-            "Perfect information",
-            "No transaction costs"
-          ]
-        },
-        "c": {
-          "second_theorem": "Any Pareto efficient allocation can be achieved as a competitive equilibrium, given appropriate redistribution of initial endowments."
-        },
-        "d": {
-          "analysis": {
-            "outcome_A": "CS=1000, PS=100, W=1100",
-            "outcome_B": "CS=550, PS=550, W=1100",
-            "efficiency": "Both are Pareto efficient (same total W)",
-            "equity": "B may be preferred for more equal distribution"
-          }
-        },
-        "e": {
-          "political_palatability": "Efficient policies may harm concentrated interest groups (e.g., producers) while benefiting diffuse groups (e.g., consumers). Losers lobby harder than winners, making efficiency-enhancing reforms politically difficult."
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P10",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Agricultural Price Support",
-      "difficulty": "advanced",
       "question": "Wheat: Qᵈ = 100 - 2p, Qˢ = 3p - 50. Price floor pᶠ = 35 with government purchase.",
-      "solution": {
-        "a": {
-          "equilibrium": "100 - 2p = 3p - 50 → 150 = 5p → p* = 30",
-          "quantity": "Q* = 100 - 60 = 40"
-        },
-        "b": {
-          "CS": "½(50 - 30)(40) = ½ × 20 × 40 = 400",
-          "PS": "½(30 - 16.67)(40) = ½ × 13.33 × 40 = 266.67",
-          "note": "Supply intercept: Qˢ = 0 when p = 50/3 ≈ 16.67",
-          "W": "400 + 266.67 = 666.67"
-        },
-        "c": {
-          "at_pf_35": {
-            "Qᵈ": "100 - 70 = 30",
-            "Qˢ": "105 - 50 = 55",
-            "surplus": "55 - 30 = 25 units"
-          }
-        },
-        "d": {
-          "gov_expenditure": "35 × 25 = $875"
-        },
-        "e": {
-          "new_CS": "½(50 - 35)(30) = ½ × 15 × 30 = 225",
-          "new_PS": "Producers sell all 55 at $35",
-          "PS_calc": "35 × 55 - ∫₀⁵⁵ Pˢ(Q)dQ",
-          "PS_integration": "35(55) - [16.67(55) + ½(1/3)(55)²] = 1925 - [917 + 504] = 504",
-          "gov_cost": "-875 (subtracted from welfare)",
-          "net_W": "225 + 504 - 875 = -146"
-        },
-        "f": {
-          "welfare_change": "New W - Old W = -146 - 666.67 ≈ -812.67",
-          "note": "Large welfare loss from price support + government purchases"
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P11",
-      "type": "application",
+      "type": "open_ended",
+      "difficulty": "hard",
       "topic": "Comparing Welfare Measures",
-      "difficulty": "advanced",
       "question": "U = x^0.5 y^0.5, m = 200, pᵧ = 1. Price falls: pₓ = 4 → pₓ = 1. Compare CV, ΔCS, EV.",
-      "solution": {
-        "a": {
-          "expectation": "Large price change (75% reduction) → significant difference between CV, ΔCS, EV",
-          "reason": "Income effect becomes large, Marshallian and Hicksian demands diverge"
-        },
-        "b": {
-          "initial": {
-            "x⁰": "0.5 × 200 / 4 = 25",
-            "y⁰": "0.5 × 200 / 1 = 100",
-            "u⁰": "√(25 × 100) = 50"
-          },
-          "final": {
-            "x¹": "0.5 × 200 / 1 = 100",
-            "y¹": "0.5 × 200 / 1 = 100",
-            "u¹": "√(100 × 100) = 100"
-          }
-        },
-        "c": {
-          "expenditure_function": "e(pₓ, pᵧ, u) = 2u√(pₓpᵧ)",
-          "CV": "e(1, 1, 50) - 200 = 100 - 200 = -100",
-          "EV": "e(4, 1, 100) - 200 = 400 - 200 = 200",
-          "CS": "∫₁⁴ (100/pₓ) dpₓ = 100[ln4 - ln1] = 100 × 1.386 = 138.6"
-        },
-        "d": {
-          "recommendation": "CV is preferred for cost-benefit analysis",
-          "reason": "CV measures willingness to pay, which is relevant for whether consumers would accept/reject policy. It's also more conservative (smaller)."
-        }
-      }
+      "hints": [],
+      "solution": ""
     },
     {
       "id": "W11-P12",
-      "type": "computational",
+      "type": "open_ended",
+      "difficulty": "medium",
       "topic": "R Implementation",
-      "difficulty": "intermediate",
       "question": "Write R functions for welfare calculations. Test with Pᵈ = 10 - Q, Pˢ = 2 + Q, ceiling pᶜ = 4.",
-      "solution": {
-        "r_code": [
-          "# (a) Calculate CS and PS",
-          "welfare_calc <- function(a, b, c, d) {",
-          "  # Inverse demand: P = a - bQ, Inverse supply: P = c + dQ",
-          "  Q_star <- (a - c) / (b + d)",
-          "  p_star <- a - b * Q_star",
-          "  ",
-          "  CS <- 0.5 * (a - p_star) * Q_star",
-          "  PS <- 0.5 * (p_star - c) * Q_star",
-          "  ",
-          "  list(Q = Q_star, p = p_star, CS = CS, PS = PS, W = CS + PS)",
-          "}",
-          "",
-          "# (b) Price ceiling analysis",
-          "ceiling_analysis <- function(a, b, c, d, p_ceil) {",
-          "  base <- welfare_calc(a, b, c, d)",
-          "  ",
-          "  Q_s <- (p_ceil - c) / d",
-          "  Q_d <- (a - p_ceil) / b",
-          "  Q_traded <- min(Q_s, Q_d)",
-          "  ",
-          "  # Welfare at ceiling (using Q_traded)",
-          "  P_d_at_Q <- a - b * Q_traded",
-          "  CS_new <- 0.5 * (a - P_d_at_Q) * Q_traded + (P_d_at_Q - p_ceil) * Q_traded",
-          "  PS_new <- 0.5 * (p_ceil - c) * Q_traded",
-          "  W_new <- CS_new + PS_new",
-          "  ",
-          "  list(Q_traded = Q_traded, shortage = Q_d - Q_s,",
-          "       CS = CS_new, PS = PS_new, W = W_new,",
-          "       DWL = base$W - W_new)",
-          "}",
-          "",
-          "# (c) CV and EV for Cobb-Douglas",
-          "cv_ev_cd <- function(p1_old, p1_new, p2, m, alpha = 0.5) {",
-          "  # Utility at old and new prices",
-          "  x1_old <- alpha * m / p1_old",
-          "  x2_old <- (1-alpha) * m / p2",
-          "  u_old <- x1_old^alpha * x2_old^(1-alpha)",
-          "  ",
-          "  x1_new <- alpha * m / p1_new",
-          "  x2_new <- (1-alpha) * m / p2",
-          "  u_new <- x1_new^alpha * x2_new^(1-alpha)",
-          "  ",
-          "  # Expenditure function: e = u / k * p1^α * p2^(1-α)",
-          "  k <- alpha^alpha * (1-alpha)^(1-alpha)",
-          "  e_fn <- function(p1, p2, u) u / k * p1^alpha * p2^(1-alpha)",
-          "  ",
-          "  CV <- e_fn(p1_new, p2, u_old) - m",
-          "  EV <- e_fn(p1_old, p2, u_new) - m",
-          "  CS <- alpha * m * log(p1_old / p1_new)",
-          "  ",
-          "  list(CV = CV, EV = EV, CS = CS)",
-          "}",
-          "",
-          "# Test",
-          "welfare_calc(10, 1, 2, 1)",
-          "ceiling_analysis(10, 1, 2, 1, 4)",
-          "cv_ev_cd(10, 5, 5, 100, 0.5)"
-        ],
-        "test_results": {
-          "welfare": "Q* = 4, p* = 6, CS = 8, PS = 8, W = 16",
-          "ceiling": "Q_traded = 2, shortage = 4, CS = 10, PS = 2, W = 12, DWL = 4",
-          "cv_ev": "CV ≈ -29.3, EV ≈ 41.4, CS ≈ 34.7"
-        }
-      }
+      "hints": [],
+      "solution": ""
     }
-  ],
-  "ai_tutor_guidance": {
-    "common_errors": [
-      "Confusing WTP with price paid when calculating CS",
-      "Using wrong formula for inelastic supply cases",
-      "Sign errors in CV and EV interpretation",
-      "Forgetting government costs in welfare calculations",
-      "Mixing up CV and EV definitions"
-    ],
-    "socratic_prompts": [
-      "What does the area under the demand curve represent?",
-      "Why does a price ceiling cause a shortage?",
-      "Why is CS not an 'exact' welfare measure?",
-      "What's the difference between CV and EV reference points?"
-    ],
-    "extension_questions": [
-      "How would externalities affect welfare calculations?",
-      "What happens with multiple price changes?",
-      "How do we handle non-marginal changes in welfare analysis?"
-    ]
-  }
+  ]
 }
