@@ -15,6 +15,9 @@ Complete all problems. Show your work for analytical questions and include R cod
 ### Problem 1: Economic Modeling
 
 a) Explain why economists use mathematical models rather than purely verbal analysis. Give two specific advantages.
+Mathematica allow ideas to ideas to be expressed clearly and tested logically 
+Example 
+1. Explaining the relatioinsship between two variables like price and Quantity of the cpommodity $Q_d = 100-2P$ This exlains that change in one unit of price leads to change in 2 units of quantity demanded.
 
 b) What is the difference between an *exogenous* variable and an *endogenous* variable in an economic model? Provide an example of each in a supply-demand model.
 
