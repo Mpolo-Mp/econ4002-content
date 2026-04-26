@@ -17,11 +17,15 @@ Complete all problems. Show your work for analytical questions and include R cod
 a) Explain why economists use mathematical models rather than purely verbal analysis. Give two specific advantages.
 Mathematica allow ideas to ideas to be expressed clearly and tested logically 
 Example 
-1. Explaining the relatioinsship between two variables like price and Quantity of the cpommodity $Q_d = 100-2P$ This exlains that change in one unit of price leads to change in 2 units of quantity demanded.
+1. Explaining the relatioinsship between two variables like price and Quantity of the cpommodity $Q_d = 100-2P$ This explains that change in one unit of price leads to change in 2 units of quantity demanded.
 
 b) What is the difference between an *exogenous* variable and an *endogenous* variable in an economic model? Provide an example of each in a supply-demand model.
+Exogeneous variables are the one which have influence in the model but can not be explaied by it , Example Income , Weather condition and production technology in the demand equation 
+
+Indogeneous variables are the one which have influence in the model like in demand equation and also can be explained by the model like price and quantity. 
 
 c) Consider the statement: "A good economic model should include every real-world detail." Do you agree or disagree? Explain.
+I disagree with the statement because an the major application of the economic model is to analyse the relationship and give the inferential intepretation, in so doing it should be simple under the given conditions , therefore by including all real world data then the model would be complex and difficult to interprete. Thats why some error terms and assumptions for the model are introduced.
 
 ---
 
