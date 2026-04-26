@@ -33,15 +33,15 @@ I disagree with the statement because an the major application of the economic m
 
 For each of the following real-world scenarios, identify which topic area from this course would be most relevant. Choose from: Consumer Theory, Producer Theory, Market Equilibrium, Trade Policy, Uncertainty, or Linear Programming.
 
-a) A farmer deciding how much fertilizer to apply to maximize profit
+a) A farmer deciding how much fertilizer to apply to maximize profit-Producer theory 
 
-b) The government evaluating the welfare effects of removing wheat import tariffs
+b) The government evaluating the welfare effects of removing wheat import tariffs-Trade policy 
 
-c) A household choosing between organic and conventional vegetables given their budget
+c) A household choosing between organic and conventional vegetables given their budget-Consumer theory 
 
-d) An agricultural cooperative deciding how to allocate limited water across different crops
+d) An agricultural cooperative deciding how to allocate limited water across different crops-Linear Programming 
 
-e) A grain trader considering whether to hedge against price risk using futures contracts
+e) A grain trader considering whether to hedge against price risk using futures contracts-Uncerainty 
 
 ---
 
@@ -51,21 +51,47 @@ e) A grain trader considering whether to hedge against price risk using futures 
 
 Without using R first, predict the output of each expression. Then verify in R.
 
+$a)$ $3 + 5 * 2 = 13$
+
+$b)$ $(3 + 5) * 2 = 16$
+
+$c)$ $17 mode 5 = 2$
+
+$d) \log\left(\exp(3)\right) = 3$
+
+$e)$ $sqrt(64) / 2^2 = 2$
+
 ```r
 # a) 
 3 + 5 * 2
+# Answer 
+> 3 + 5 * 2
+[1] 13
 
 # b)
 (3 + 5) * 2
+# Answer
+> (3 + 5) * 2
+[1] 16
 
 # c)
 17 %% 5
+# Answer
+> 17 %% 5
+[1] 2
 
 # d)
 log(exp(3))
+#Answer
+> log(exp(3))
+[1] 3
 
 # e)
 sqrt(64) / 2^2
+#Answer
+> sqrt(64) / 2^2
+[1] 2
+
 ```
 
 ---
