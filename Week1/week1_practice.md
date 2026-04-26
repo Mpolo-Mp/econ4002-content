@@ -16,6 +16,11 @@ Complete all problems. Show your work for analytical questions and include R cod
 
 a) Explain why economists use mathematical models rather than purely verbal analysis. Give two specific advantages.
 
+Mathematuca allow ideas to be expressed clearly and tested logically 
+Examples 
+1. Demonstrating The relationship
+   It is somehow hard to explain the relationship between price and demand of a commodity by words but it is shor and easy to explain it mathematically like $QD = 100 -2P& this means change in one unit of price lead to change in 2 units demand of the commodity X 
+
 b) What is the difference between an *exogenous* variable and an *endogenous* variable in an economic model? Provide an example of each in a supply-demand model.
 
 c) Consider the statement: "A good economic model should include every real-world detail." Do you agree or disagree? Explain.
