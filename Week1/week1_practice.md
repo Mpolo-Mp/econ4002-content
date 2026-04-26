@@ -38,7 +38,7 @@ e) A grain trader considering whether to hedge against price risk using futures 
 
 ---
 
-## Part B: R Fundamentals
+## Part B: R Fundamentals.
 
 ### Problem 3: Basic Operations
 
